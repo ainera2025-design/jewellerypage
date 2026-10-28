@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Suvarna Heritage Jewellers | Gold, Diamond, Bridal and Temple Jewellery in Mumbai</title>
+<meta name="description" content="Visit Suvarna Heritage Jewellers in Zaveri Bazaar, Mumbai. Hallmarked gold, certified diamonds, bridal and temple jewellery, custom design and gold exchange from a family jeweller since 1974.">
+<meta name="theme-color" content="#1E1E1E">
+<link rel="canonical" href="https://www.example.com/">
+
+<!-- Social sharing. TODO: replace the URL and add a 1200x630 image at /og-image.jpg -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Suvarna Heritage Jewellers">
+<meta property="og:title" content="Suvarna Heritage Jewellers | Crafted for Generations">
+<meta property="og:description" content="Hallmarked gold, certified diamonds, bridal and temple jewellery. Visit our showroom in Zaveri Bazaar, Mumbai.">
+<meta property="og:url" content="https://www.example.com/">
+<meta property="og:image" content="https://www.example.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Crect width='100' height='92' rx='18' fill='%231E1E1E'/%3E%3Cpath d='M30 22h40l16 18-36 36-36-36z' fill='%23C9A227'/%3E%3C/svg%3E">
+
+<!-- Fonts: Bodoni Moda (display) and Jost (text). Both fall back to system serif and sans. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Jost:wght@300;400;500&display=swap">
+
+<script>document.documentElement.className = 'js';</script>
+<noscript><style>.loader{display:none!important}</style></noscript>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "JewelryStore",
+ "name": "Suvarna Heritage Jewellers",
+ "url": "https://www.example.com/",
+ "image": "https://www.example.com/og-image.jpg",
+ "telephone": "+91-98765-43210",
+ "email": "hello@suvarnaheritage.com",
+ "foundingDate": "1974",
+ "description": "Family jeweller offering hallmarked gold, certified diamonds, bridal and temple jewellery, custom design, repair and gold exchange.",
+ "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "Shop 14, Heritage Arcade, Zaveri Bazaar",
+   "addressLocality": "Mumbai",
+   "addressRegion": "Maharashtra",
+   "postalCode": "400002",
+   "addressCountry": "IN"
+ },
+ "openingHoursSpecification": [
+   { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:30", "closes": "20:30" },
+   { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:00", "closes": "19:00" }
+ ]
+}
+</script>
+
+<style>
+/* =========================================================
+  SUVARNA HERITAGE JEWELLERS
+  1. Tokens   2. Base   3. Layout & utilities   4. Buttons & links
+  5. Art frames   6. Loader   7. Header & nav   8. Hero
+  9. Sections (collections, about, why, arrivals, bridal, services,
+     reviews, gallery, visit, contact)   10. Footer & floating buttons
+  11. Lightbox   12. Reveal & motion   13. Reduced motion
+  ========================================================= */
+
+/* ---------- 1. Tokens ---------- */
+:root {
+ --gold: #C9A227;
+ --gold-ink: #8A6A0E;          /* gold dark enough for text on light backgrounds */
+ --ivory: #FAF9F6;
+ --cream: #F5F0E8;
+ --beige: #EAE3D2;
+ --charcoal: #1E1E1E;
+ --ink: #1E1E1E;
+ --ink-soft: #5B564C;
+ --on-dark: #FAF9F6;
+ --on-dark-soft: rgba(250, 249, 246, .74);
+ --line: rgba(30, 30, 30, .14);
+ --line-light: rgba(250, 249, 246, .16);
+ --line-gold: rgba(201, 162, 39, .5);
+
+ --font-display: "Bodoni Moda", "Bodoni 72", Didot, "Playfair Display", Georgia, "Times New Roman", serif;
+ --font-body: "Jost", "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+ --fs-lead: clamp(1.1rem, 1.04rem + .35vw, 1.28rem);
+ --fs-h1: clamp(2.5rem, 1.3rem + 4.3vw, 5rem);
+ --fs-h2: clamp(2rem, 1.3rem + 2.8vw, 3.6rem);
+ --fs-h3: clamp(1.35rem, 1.2rem + .55vw, 1.7rem);
+
+ --gutter: clamp(1.25rem, 4vw, 3rem);
+ --section-y: clamp(4.5rem, 9vw, 8.5rem);
+ --header-h: 4.75rem;
+
+ --ease: cubic-bezier(.22, .61, .36, 1);
+ --ease-out: cubic-bezier(.16, 1, .3, 1);
+ --arch: 999px 999px 0 0;
+ --shadow-soft: 0 28px 50px -30px rgba(30, 30, 30, .5);
+
+ /* artwork variables (overridden by .tone-* and .metal-* classes) */
+ --metal: url(#g-gold-u);
+ --bust: #2B2824;
+}
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); -webkit-text-size-adjust: 100%; }
+html.no-scroll { overflow: hidden; }
+body {
+ margin: 0;
+ font-family: var(--font-body);
+ font-size: 1.0625rem;
+ line-height: 1.7;
+ font-weight: 400;
+ color: var(--ink);
+ background: var(--ivory);
+ -webkit-font-smoothing: antialiased;
+ text-rendering: optimizeLegibility;
+ overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height: 1.1; margin: 0; letter-spacing: -.005em; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+img, svg { max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; }
+address { font-style: normal; }
+figure, blockquote { margin: 0; }
+::selection { background: var(--gold); color: var(--charcoal); }
+
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.icon { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+/* ---------- 3. Layout & utilities ---------- */
+.container { width: min(100% - (var(--gutter) * 2), 78rem); margin-inline: auto; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; top: .75rem; left: .75rem; z-index: 300; padding: .7rem 1.1rem; background: var(--gold); color: var(--charcoal); font-weight: 500; transform: translateY(-200%); transition: transform .3s var(--ease); }
+.skip-link:focus { transform: none; }
+
+.section { position: relative; padding-block: var(--section-y); }
+.section--ivory { background: var(--ivory); }
+.section--cream { background: var(--cream); }
+.section--beige { background: var(--beige); }
+.section--dark { background: var(--charcoal); color: var(--on-dark); }
+
+.section-head { display: grid; gap: 1.1rem; margin-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.section-head h2 { font-size: var(--fs-h2); line-height: 1.06; text-wrap: balance; max-width: 18ch; }
+.section-head p { color: var(--ink-soft); font-size: var(--fs-lead); max-width: 44ch; line-height: 1.6; }
+.section--dark .section-head p { color: var(--on-dark-soft); }
+@media (min-width: 900px) {
+ .section-head { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: end; gap: 4rem; }
+}
+
+/* ---------- 4. Buttons & links ---------- */
+.btn {
+ display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+ padding: .95rem 1.8rem; min-height: 3rem;
+ font-weight: 500; letter-spacing: .03em; line-height: 1.2; text-align: center;
+ border: 1px solid transparent; border-radius: 999px; cursor: pointer;
+ transition: background-color .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--gold { background: linear-gradient(135deg, #D8B53B, #C9A227 45%, #B38C16); color: var(--charcoal); box-shadow: 0 14px 28px -16px rgba(201, 162, 39, .9); }
+.btn--gold:hover { background: linear-gradient(135deg, #E6C85A, #D2AE2F 45%, #BE971D); box-shadow: 0 18px 32px -14px rgba(201, 162, 39, 1); }
+.btn--ghost-light { border-color: rgba(250, 249, 246, .4); color: var(--on-dark); background: rgba(250, 249, 246, .04); backdrop-filter: blur(6px); }
+.btn--ghost-light:hover { border-color: var(--gold); background: rgba(201, 162, 39, .14); }
+.btn--dark { background: var(--charcoal); color: var(--on-dark); }
+.btn--dark:hover { background: #000; box-shadow: 0 16px 30px -16px rgba(0, 0, 0, .7); }
+.btn--sm { padding: .65rem 1.25rem; min-height: 2.5rem; font-size: .95rem; }
+
+.link-btn {
+ position: relative; display: inline-flex; align-items: center; gap: .5rem;
+ padding: .3rem 0; border: 0; background: none; cursor: pointer;
+ font-weight: 500; letter-spacing: .03em; color: var(--gold-ink);
+}
+.link-btn::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: currentColor; transform: scaleX(.28); transform-origin: left; transition: transform .5s var(--ease); }
+.link-btn:hover::after, .link-btn:focus-visible::after { transform: scaleX(1); }
+.section--dark .link-btn { color: var(--gold); }
+
+/* ---------- 5. Art frames (illustrations, swap for photographs) ---------- */
+.art { position: relative; overflow: hidden; aspect-ratio: 4 / 5; background: var(--tone-bg, #2a2723); isolation: isolate; }
+.art--wide { aspect-ratio: 2 / 1; }
+.art > svg, .art > img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; transition: transform 1.2s var(--ease); }
+.art > img { object-fit: cover; }
+.art::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2; background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, .26) 50%, transparent 62%); transform: translateX(-130%); transition: transform 1s var(--ease); }
+.is-hoverable:hover .art > svg, .is-hoverable:hover .art > img, .is-hoverable:focus-within .art > svg { transform: scale(1.06); }
+.is-hoverable:hover .art::after { transform: translateX(130%); }
+
+.arch { border-radius: var(--arch); }
+.arch.art::before { content: ""; position: absolute; inset: .7rem; z-index: 3; pointer-events: none; border: 1px solid rgba(201, 162, 39, .6); border-radius: var(--arch); }
+
+.tone-charcoal { --tone-bg: radial-gradient(100% 70% at 50% 28%, #3A3630 0%, #262320 55%, #191817 100%); --bust: #403A32; }
+.tone-umber    { --tone-bg: radial-gradient(100% 70% at 50% 28%, #4A3826 0%, #2B2016 55%, #1C140E 100%); --bust: #43372B; }
+.tone-slate    { --tone-bg: radial-gradient(100% 70% at 50% 28%, #3A3D42 0%, #26282B 55%, #19191B 100%); --bust: #3E4146; }
+.tone-cream    { --tone-bg: radial-gradient(120% 80% at 50% 30%, #FAF9F6 0%, #EFE7D6 60%, #E2D8C0 100%); --bust: #2B2824; }
+.tone-beige    { --tone-bg: radial-gradient(120% 80% at 50% 30%, #F5F0E8 0%, #EAE3D2 55%, #DCD1B8 100%); --bust: #2B2824; }
+.tone-sand     { --tone-bg: radial-gradient(120% 80% at 50% 30%, #EFE6D0 0%, #E0D3B5 55%, #CDBD99 100%); --bust: #2B2824; }
+.metal-silver { --metal: url(#g-silver-u); }
+.metal-plat   { --metal: url(#g-plat-u); }
+
+/* ---------- 6. Loader ---------- */
+.loader {
+ position: fixed; inset: 0; z-index: 400; display: grid; place-content: center; justify-items: center; gap: 1.25rem;
+ background: var(--charcoal); color: var(--on-dark);
+ transition: opacity .8s var(--ease), visibility .8s;
+ animation: loader-failsafe .01s 6s forwards;
+}
+.loader__gem { width: 5.5rem; height: auto; overflow: visible; }
+.loader__gem path { fill: none; stroke: var(--gold); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.5s var(--ease) forwards; }
+.loader__gem .facets { animation-delay: .35s; stroke-width: 1; opacity: .8; }
+.loader__gem .fill { fill: rgba(201, 162, 39, .85); stroke: none; stroke-dasharray: none; stroke-dashoffset: 0; opacity: 0; animation: fade-in .9s 1.1s var(--ease) forwards; }
+.loader__name { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: .08em; opacity: 0; animation: fade-in 1s .6s var(--ease) forwards; }
+html.is-ready .loader { opacity: 0; visibility: hidden; pointer-events: none; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fade-in { to { opacity: 1; } }
+@keyframes loader-failsafe { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+
+/* ---------- 7. Header & navigation ---------- */
+.site-header { position: fixed; inset: 0 0 auto 0; z-index: 100; color: var(--on-dark); transition: background-color .5s var(--ease), color .5s var(--ease), box-shadow .5s var(--ease), backdrop-filter .5s var(--ease); }
+.header__bar { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: var(--header-h); }
+.site-header.is-scrolled { background: rgba(250, 249, 246, .8); -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5); color: var(--ink); box-shadow: 0 1px 0 var(--line), 0 14px 34px -22px rgba(30, 30, 30, .45); }
+.site-header.menu-open { background: transparent; color: var(--on-dark); box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+.brand { display: inline-flex; align-items: center; gap: .75rem; position: relative; z-index: 2; }
+.brand__mark { width: 2.4rem; height: 2.2rem; flex: none; }
+.brand__text { display: grid; line-height: 1.1; }
+.brand__name { font-family: var(--font-display); font-size: 1.6rem; font-weight: 500; letter-spacing: .04em; }
+.brand__sub { font-size: .8rem; letter-spacing: .16em; opacity: .8; }
+
+.menu-toggle { position: relative; z-index: 2; display: grid; place-content: center; gap: 6px; width: 3rem; height: 3rem; padding: 0; background: none; border: 1px solid currentColor; border-radius: 50%; cursor: pointer; opacity: .9; }
+.menu-toggle span { display: block; width: 1.2rem; height: 1.5px; background: currentColor; transition: transform .45s var(--ease), opacity .3s; }
+.menu-open .menu-toggle span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+.menu-open .menu-toggle span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* mobile nav: full-screen sheet */
+.nav {
+ position: fixed; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: center; gap: 2rem;
+ padding: calc(var(--header-h) + 1rem) var(--gutter) 2.5rem;
+ background: radial-gradient(80% 60% at 80% 0%, rgba(201, 162, 39, .18), transparent 70%), var(--charcoal);
+ color: var(--on-dark); overflow-y: auto;
+ clip-path: circle(0% at calc(100% - 2.7rem) 2.4rem); visibility: hidden;
+ transition: clip-path .8s var(--ease-out), visibility 0s .8s;
+}
+.nav.is-open { clip-path: circle(150% at calc(100% - 2.7rem) 2.4rem); visibility: visible; transition: clip-path .9s var(--ease-out), visibility 0s; }
+.nav__list { display: grid; gap: .15rem; }
+.nav__link { display: inline-block; padding: .35rem 0; font-family: var(--font-display); font-size: clamp(1.8rem, 7vw, 2.4rem); color: var(--on-dark); opacity: .78; transition: opacity .3s, color .3s, transform .4s var(--ease); }
+.nav__link:hover, .nav__link.is-active { opacity: 1; color: var(--gold); transform: translateX(.35rem); }
+.nav .nav__cta { align-self: flex-start; }
+
+@media (min-width: 1180px) {
+ .menu-toggle { display: none; }
+ .nav { position: static; inset: auto; z-index: auto; flex-direction: row; align-items: center; justify-content: flex-end; gap: 2rem; padding: 0; background: none; color: inherit; overflow: visible; clip-path: none; visibility: visible; transition: none; }
+ .nav__list { display: flex; gap: 1.7rem; }
+ .nav__link { position: relative; padding: .5rem 0; font-family: var(--font-body); font-size: .98rem; letter-spacing: .03em; color: inherit; opacity: .86; }
+ .nav__link:hover, .nav__link.is-active { color: inherit; opacity: 1; transform: none; }
+ .nav__link::after { content: ""; position: absolute; left: 0; right: 0; bottom: .1rem; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease); }
+ .nav__link:hover::after, .nav__link.is-active::after { transform: scaleX(1); }
+ .site-header .btn--ghost-light { color: inherit; }
+ .site-header.is-scrolled .btn--ghost-light { border-color: var(--charcoal); background: transparent; }
+ .site-header.is-scrolled .btn--ghost-light:hover { background: var(--charcoal); color: var(--on-dark); }
+}
+
+/* ---------- 8. Hero ---------- */
+.hero {
+ position: relative; isolation: isolate; overflow: hidden;
+ min-height: 100vh; min-height: 100svh; display: flex; align-items: center;
+ color: var(--on-dark);
+ background:
+   radial-gradient(55% 60% at 74% 46%, rgba(201, 162, 39, .24), transparent 70%),
+   radial-gradient(45% 45% at 6% 100%, rgba(201, 162, 39, .1), transparent 70%),
+   linear-gradient(180deg, #1A1918 0%, #1E1E1E 55%, #141312 100%);
+}
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .16; mix-blend-mode: overlay; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.hero__inner { display: grid; gap: clamp(2rem, 4vw, 5rem); align-items: center; padding-block: calc(var(--header-h) + 2rem) 4.5rem; }
+.hero__copy { max-width: 40rem; }
+.hero__title { font-size: var(--fs-h1); line-height: 1.04; font-weight: 500; letter-spacing: -.012em; }
+.hero__title .line { display: block; overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em; }
+.hero__title .line > span { display: inline-block; }
+.hero__lead { margin-top: 1.75rem; max-width: 34rem; font-size: var(--fs-lead); line-height: 1.65; color: var(--on-dark-soft); font-weight: 300; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2.25rem; }
+
+.glass { background: rgba(250, 249, 246, .08); border: 1px solid var(--line-light); -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3); box-shadow: 0 20px 40px -24px rgba(0, 0, 0, .7); }
+.status { display: inline-flex; align-items: center; gap: .65rem; padding: .55rem 1.1rem; border-radius: 999px; font-size: .95rem; }
+.hero__status { margin-top: 2.5rem; }
+.status__dot { width: .55rem; height: .55rem; border-radius: 50%; background: #9A968C; flex: none; }
+.status.is-open .status__dot { background: #5BC27A; box-shadow: 0 0 0 4px rgba(91, 194, 122, .22); }
+.status.is-closed .status__dot { background: var(--gold); }
+
+.hero-art { position: relative; justify-self: center; width: min(100%, 30rem); aspect-ratio: 6 / 7; perspective: 1100px; }
+.hero-art__frame { position: absolute; inset: 0; overflow: hidden; border-radius: var(--arch); border: 1px solid var(--line-gold); background: linear-gradient(180deg, rgba(250, 249, 246, .08), rgba(250, 249, 246, .015)); box-shadow: inset 0 0 90px rgba(201, 162, 39, .1); }
+.hero-art__frame::before { content: ""; position: absolute; inset: .9rem; z-index: 2; pointer-events: none; border: 1px solid rgba(201, 162, 39, .28); border-radius: var(--arch); }
+.hero-art__light { position: absolute; inset: 0; z-index: 1; pointer-events: none; mix-blend-mode: screen; opacity: .85; background: radial-gradient(circle at var(--lx, 50%) var(--ly, 32%), rgba(255, 233, 160, .34), transparent 46%); transition: background .15s linear; }
+.hero-ring { position: absolute; inset: 4% 3% 0; width: 94%; height: 96%; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .35s ease-out; overflow: visible; }
+.hero-art__tag { position: absolute; z-index: 3; right: -1rem; bottom: 12%; max-width: 12.5rem; padding: .85rem 1.1rem; border-radius: 4px; font-size: .9rem; line-height: 1.4; }
+
+@media (min-width: 960px) {
+ .hero__inner { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); }
+ .hero-art { justify-self: end; }
+}
+@media (max-width: 959px) {
+ .hero-art { width: min(82%, 24rem); }
+ .hero-art__tag { right: -.5rem; }
+}
+@media (max-width: 559px) { .hero-art__tag { display: none; } }
+
+.spark { transform-origin: center; transform-box: fill-box; }
+html.is-ready .spark { animation: twinkle 5.5s var(--ease) infinite; animation-delay: var(--d, 0s); }
+@keyframes twinkle { 0%, 55%, 100% { transform: scale(.55) rotate(0); opacity: .5; } 70% { transform: scale(1.1) rotate(45deg); opacity: 1; } 85% { transform: scale(.7) rotate(90deg); opacity: .7; } }
+
+/* hero entrance: one orchestrated sequence after the loader */
+.js .hero__title .line > span { transform: translateY(110%); transition: transform 1.2s var(--ease-out) var(--d, 0s); }
+.js.is-ready .hero__title .line > span { transform: none; }
+.js .hero-in { opacity: 0; transform: translateY(16px); transition: opacity 1s var(--ease) var(--d, 0s), transform 1s var(--ease) var(--d, 0s); }
+.js.is-ready .hero-in { opacity: 1; transform: none; }
+.js .hero-art.hero-in { transform: translateY(40px) scale(.97); }
+.js.is-ready .hero-art.hero-in { transform: none; }
+
+/* ---------- 9a. Collections ---------- */
+.collections { display: grid; gap: 3rem 1.5rem; }
+.collection { display: grid; gap: 1.4rem; align-content: start; }
+.collection__media { cursor: pointer; }
+.collection__body h3 { font-size: var(--fs-h3); margin-bottom: .5rem; }
+.collection__body p { color: var(--ink-soft); max-width: 30ch; margin-bottom: .9rem; }
+@media (min-width: 620px) { .collections { grid-template-columns: repeat(2, 1fr); gap: 4rem 2rem; } }
+@media (min-width: 1020px) {
+ .collections { grid-template-columns: repeat(3, 1fr); gap: 4.5rem 2.5rem; }
+ .collection:nth-child(3n + 2) { margin-top: 4rem; }
+}
+
+/* ---------- 9b. About ---------- */
+.about { display: grid; gap: 3.5rem; align-items: start; }
+.about__media { position: relative; max-width: 28rem; width: 100%; margin-inline: auto; }
+.about__seal { aspect-ratio: 4 / 5; padding: 9% 5% 4%; display: grid; place-items: center; }
+.about__seal svg { position: relative; width: 100%; height: auto; }
+.about__note { position: absolute; left: 50%; bottom: -1.4rem; transform: translateX(-50%); width: max-content; max-width: 90%; padding: .7rem 1.3rem; border-radius: 999px; font-size: .95rem; text-align: center; color: var(--ink); background: rgba(250, 249, 246, .72); border-color: rgba(30, 30, 30, .1); }
+.about__text > * + * { margin-top: 1.25rem; }
+.about__text h2 { font-size: var(--fs-h2); line-height: 1.06; text-wrap: balance; }
+.about__text p { color: var(--ink-soft); max-width: 58ch; }
+.about__text .lead { font-size: var(--fs-lead); color: var(--ink); line-height: 1.6; }
+.assurance { display: grid; gap: .8rem; margin-top: 1.75rem !important; padding-block: 1.5rem; border-block: 1px solid var(--line); }
+.assurance li { display: flex; gap: .85rem; align-items: flex-start; }
+.assurance .icon { width: 1.35rem; height: 1.35rem; margin-top: .2rem; color: var(--gold-ink); }
+.assurance strong { font-weight: 500; }
+.timeline { position: relative; margin-top: 2.25rem !important; padding-left: 1.75rem; display: grid; gap: 1.5rem; }
+.timeline::before { content: ""; position: absolute; left: 4px; top: .6rem; bottom: .6rem; width: 1px; background: linear-gradient(var(--gold), rgba(201, 162, 39, .15)); }
+.timeline li { position: relative; display: grid; gap: .15rem; }
+.timeline li::before { content: ""; position: absolute; left: -1.75rem; top: .62rem; width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg); }
+.timeline strong { font-family: var(--font-display); font-size: 1.35rem; font-weight: 500; }
+.timeline span { color: var(--ink-soft); max-width: 48ch; }
+@media (min-width: 960px) {
+ .about { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(3rem, 7vw, 7rem); }
+ .about__media { position: sticky; top: calc(var(--header-h) + 2rem); margin-inline: 0; }
+}
+
+/* ---------- 9c. Why choose us ---------- */
+.why { display: grid; gap: 0; }
+.why__item { padding: 2rem 0 2.25rem; border-top: 1px solid var(--line-light); transition: border-color .5s var(--ease); }
+.why__item:hover { border-top-color: var(--gold); }
+.why__item .icon { width: 2.6rem; height: 2.6rem; color: var(--gold); stroke-width: 1.2; margin-bottom: 1.25rem; }
+.why__item h3 { font-size: var(--fs-h3); margin-bottom: .6rem; }
+.why__item p { color: var(--on-dark-soft); max-width: 34ch; }
+@media (min-width: 680px) { .why { grid-template-columns: repeat(2, 1fr); column-gap: 3rem; } }
+@media (min-width: 1020px) { .why { grid-template-columns: repeat(3, 1fr); column-gap: 4rem; } .why__item { padding-block: 2.5rem 3rem; } }
+
+/* ---------- 9d. New arrivals ---------- */
+.filters { display: flex; gap: .2rem 1.9rem; overflow-x: auto; margin-bottom: .75rem; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+.filters::-webkit-scrollbar { display: none; }
+.filter { position: relative; padding: .9rem 0 .85rem; border: 0; background: none; cursor: pointer; color: var(--ink-soft); white-space: nowrap; letter-spacing: .02em; transition: color .3s; }
+.filter::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease); }
+.filter:hover { color: var(--ink); }
+.filter[aria-pressed="true"] { color: var(--ink); font-weight: 500; }
+.filter[aria-pressed="true"]::after, .filter:hover::after { transform: scaleX(1); }
+.filters-status { margin-bottom: 1.75rem; font-size: .95rem; color: var(--ink-soft); min-height: 1.7em; }
+
+.pieces { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem .9rem; }
+.piece { transition: opacity .35s var(--ease), transform .35s var(--ease); }
+.piece.is-out { opacity: 0; transform: scale(.96); }
+.piece[hidden] { display: none; }
+.piece .art { border-radius: 2px; }
+.piece figcaption { display: grid; gap: .1rem; padding-top: .9rem; }
+.piece__name { font-family: var(--font-display); font-size: 1.12rem; line-height: 1.25; }
+.piece__cat { font-size: .9rem; color: var(--ink-soft); }
+@media (min-width: 900px) { .pieces { grid-template-columns: repeat(4, 1fr); gap: 2.5rem 1.4rem; } }
+
+/* ---------- 9e. Bridal highlight ---------- */
+.bridal { display: grid; gap: 3.5rem; align-items: center; }
+.bridal__art { position: relative; max-width: 30rem; width: 100%; margin-inline: auto; }
+.bridal__art::before { content: ""; position: absolute; inset: -1.1rem 1.4rem 1.4rem -1.1rem; border: 1px solid var(--line-gold); border-radius: var(--arch); }
+.bridal__art .art { position: relative; aspect-ratio: 4 / 5.2; }
+.bridal__copy > * + * { margin-top: 1.4rem; }
+.bridal__copy h2 { font-size: var(--fs-h2); line-height: 1.06; text-wrap: balance; max-width: 16ch; }
+.bridal__copy p { color: var(--ink-soft); max-width: 50ch; }
+.bridal__copy .lead { color: var(--ink); font-size: var(--fs-lead); line-height: 1.6; }
+.bridal__list { display: grid; gap: .9rem; padding-block: 1.4rem; border-block: 1px solid rgba(30, 30, 30, .16); }
+.bridal__list li { display: flex; gap: .85rem; align-items: flex-start; }
+.bridal__list .icon { width: 1.3rem; height: 1.3rem; margin-top: .22rem; color: var(--gold-ink); }
+.bridal__cta { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; }
+@media (min-width: 960px) {
+ .bridal { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(3rem, 8vw, 8rem); }
+ .bridal__art { margin-inline: 0; }
+}
+
+/* ---------- 9f. Services ---------- */
+.services { display: grid; gap: 3rem; align-items: start; }
+.services__intro > * + * { margin-top: 1.25rem; }
+.services__intro h2 { font-size: var(--fs-h2); line-height: 1.06; text-wrap: balance; }
+.services__intro p { color: var(--ink-soft); max-width: 36ch; font-size: var(--fs-lead); line-height: 1.6; }
+.services__grid { display: grid; gap: 1rem; }
+.service { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: .65rem; padding: 1.9rem 1.75rem 1.6rem; background: var(--ivory); border: 1px solid rgba(138, 106, 14, .2); border-radius: 2px; transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease); }
+.service::after { content: ""; position: absolute; left: -1px; right: -1px; bottom: -1px; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .6s var(--ease); }
+.service:hover { transform: translateY(-4px); box-shadow: var(--shadow-soft); border-color: rgba(201, 162, 39, .55); }
+.service:hover::after { transform: scaleX(1); }
+.service .icon { width: 2.3rem; height: 2.3rem; color: var(--gold-ink); stroke-width: 1.25; margin-bottom: .4rem; }
+.service h3 { font-size: 1.4rem; }
+.service p { color: var(--ink-soft); flex: 1; }
+.service .link-btn { margin-top: .5rem; }
+@media (min-width: 620px) { .services__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1020px) {
+ .services { grid-template-columns: minmax(0, .8fr) minmax(0, 1.7fr); gap: clamp(3rem, 6vw, 6rem); }
+ .services__intro { position: sticky; top: calc(var(--header-h) + 2.5rem); }
+}
+
+/* ---------- 9g. Reviews (carousel) ---------- */
+.reviews { --per-view: 1; --gap: 1.25rem; }
+@media (min-width: 720px) { .reviews { --per-view: 2; } }
+@media (min-width: 1080px) { .reviews { --per-view: 3; --gap: 1.5rem; } }
+.carousel__viewport { overflow: hidden; padding: 1rem .25rem 2.5rem; margin: -1rem -.25rem -2.5rem; touch-action: pan-y; }
+.carousel__track { display: flex; gap: var(--gap); transition: transform .9s var(--ease-out); will-change: transform; }
+.review { flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view)); display: flex; flex-direction: column; gap: 1.25rem; padding: 2rem 1.9rem 1.75rem; border-radius: 4px; background: linear-gradient(160deg, rgba(250, 249, 246, .1), rgba(250, 249, 246, .03)); border: 1px solid var(--line-light); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 32px 60px -34px rgba(0, 0, 0, .8); }
+.stars { display: flex; gap: .2rem; color: var(--gold); }
+.stars .icon { width: 1.15rem; height: 1.15rem; fill: currentColor; stroke: none; }
+.review blockquote { margin: 0; flex: 1; font-family: var(--font-display); font-size: 1.22rem; line-height: 1.55; font-style: italic; font-weight: 400; }
+.review__who { display: grid; gap: .1rem; padding-top: 1.1rem; border-top: 1px solid var(--line-light); }
+.review__who strong { font-weight: 500; }
+.review__who span { font-size: .92rem; color: var(--on-dark-soft); }
+.carousel__controls { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 3.25rem; }
+.carousel__dots { display: flex; flex-wrap: wrap; gap: .25rem; }
+.carousel__dot { position: relative; width: 1.6rem; height: 1.6rem; padding: 0; border: 0; background: none; cursor: pointer; }
+.carousel__dot::before { content: ""; position: absolute; inset: 50% .3rem auto; height: 2px; margin-top: -1px; background: rgba(250, 249, 246, .3); transition: background .4s, inset .4s var(--ease); }
+.carousel__dot[aria-current="true"]::before { background: var(--gold); inset-inline: 0; }
+.carousel__buttons { display: flex; gap: .6rem; }
+.round-btn { display: grid; place-items: center; width: 3rem; height: 3rem; padding: 0; border-radius: 50%; border: 1px solid var(--line-light); background: rgba(250, 249, 246, .04); color: var(--on-dark); cursor: pointer; transition: background-color .35s, border-color .35s, color .35s; }
+.round-btn:hover { border-color: var(--gold); background: rgba(201, 162, 39, .16); }
+.round-btn .icon { width: 1.3rem; height: 1.3rem; }
+.round-btn .icon-play { display: none; }
+.round-btn[aria-pressed="true"] .icon-play { display: block; }
+.round-btn[aria-pressed="true"] .icon-pause { display: none; }
+
+/* ---------- 9h. Showroom gallery ---------- */
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: clamp(8.5rem, 38vw, 13rem); grid-auto-flow: dense; gap: .75rem; }
+.gallery__item { position: relative; overflow: hidden; padding: 0; border: 0; border-radius: 2px; cursor: zoom-in; background: #222; text-align: left; }
+.gallery__item.is-wide { grid-column: span 2; }
+.gallery__item.is-tall { grid-row: span 2; }
+.gallery__item .art { position: absolute; inset: 0; aspect-ratio: auto; }
+.gallery__cap { position: absolute; inset: auto 0 0; z-index: 4; display: grid; padding: 3rem 1.1rem 1rem; color: var(--on-dark); line-height: 1.35; background: linear-gradient(transparent, rgba(20, 19, 18, .86)); opacity: 0; transform: translateY(10px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.gallery__cap strong { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; }
+.gallery__cap span { font-size: .9rem; opacity: .8; }
+.gallery__zoom { position: absolute; z-index: 4; top: .8rem; right: .8rem; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; color: var(--on-dark); opacity: 0; transform: scale(.85); transition: opacity .4s, transform .4s var(--ease); }
+.gallery__zoom .icon { width: 1.1rem; height: 1.1rem; }
+.gallery__item:hover .gallery__cap, .gallery__item:focus-visible .gallery__cap, .gallery__item:hover .gallery__zoom, .gallery__item:focus-visible .gallery__zoom { opacity: 1; transform: none; }
+.gallery__item:hover .art > svg, .gallery__item:focus-visible .art > svg { transform: scale(1.06); }
+.gallery__item:hover .art::after { transform: translateX(130%); }
+@media (hover: none) { .gallery__cap { opacity: 1; transform: none; padding-top: 2rem; } .gallery__zoom { opacity: 1; transform: none; } }
+@media (min-width: 900px) {
+ .gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: clamp(11rem, 17vw, 15rem); gap: 1rem; }
+}
+
+/* ---------- 9i. Visit ---------- */
+.visit { display: grid; gap: 2.5rem; align-items: stretch; }
+.visit__info > * + * { margin-top: 1.9rem; }
+.visit__info h2 { font-size: var(--fs-h2); line-height: 1.06; text-wrap: balance; }
+.contact-list { display: grid; gap: 1.35rem; }
+.contact-list li { display: flex; gap: 1rem; align-items: flex-start; }
+.contact-list .icon { width: 1.4rem; height: 1.4rem; margin-top: .3rem; color: var(--gold-ink); }
+.contact-list dt, .contact-list .label { display: block; font-size: .88rem; letter-spacing: .06em; color: var(--ink-soft); }
+.contact-list a { background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat; transition: background-size .5s var(--ease); }
+.contact-list a:hover { background-size: 100% 1px; }
+.hours { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.hours caption { padding-bottom: .6rem; text-align: left; font-family: var(--font-display); font-size: 1.3rem; }
+.hours th, .hours td { padding: .55rem 0; text-align: left; font-weight: 400; border-top: 1px solid var(--line); }
+.hours td { text-align: right; color: var(--ink-soft); }
+.hours tr.is-today th, .hours tr.is-today td { color: var(--ink); font-weight: 500; }
+.hours tr.is-today th { position: relative; padding-left: 1.1rem; }
+.hours tr.is-today th::before { content: ""; position: absolute; left: 0; top: 50%; width: 6px; height: 6px; margin-top: -3px; background: var(--gold); transform: rotate(45deg); }
+.visit__info .status { background: var(--ivory); border: 1px solid var(--line); }
+.visit__info .status.is-open { border-color: rgba(91, 194, 122, .5); }
+.visit__actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+.map { position: relative; min-height: 22rem; overflow: hidden; border-radius: 2px; box-shadow: var(--shadow-soft); background: var(--beige); }
+.map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.45) sepia(.15) contrast(1.05); transition: filter .6s; }
+.map:hover iframe { filter: none; }
+@media (min-width: 960px) {
+ .visit { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(3rem, 6vw, 6rem); }
+ .map { min-height: 38rem; }
+}
+
+/* ---------- 9j. Contact ---------- */
+.contact { display: grid; gap: 3rem; align-items: start; }
+.contact__intro > * + * { margin-top: 1.25rem; }
+.contact__intro h2 { font-size: var(--fs-h2); line-height: 1.06; text-wrap: balance; max-width: 14ch; }
+.contact__intro p { color: var(--ink-soft); max-width: 40ch; font-size: var(--fs-lead); line-height: 1.6; }
+.form { display: grid; gap: 1.75rem; padding: clamp(1.75rem, 4vw, 3rem); background: #fff; border: 1px solid rgba(138, 106, 14, .16); border-radius: 4px; box-shadow: var(--shadow-soft); }
+.field { display: grid; gap: .4rem; }
+.field label { font-weight: 500; }
+.field .optional { font-weight: 400; color: var(--ink-soft); }
+.field input, .field textarea { width: 100%; padding: .7rem 0; font: inherit; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid rgba(30, 30, 30, .35); border-radius: 0; transition: border-color .3s, box-shadow .3s; }
+.field textarea { min-height: 7.5rem; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: #8A857A; }
+.field input:hover, .field textarea:hover { border-bottom-color: var(--ink); }
+.field input:focus, .field textarea:focus { outline: none; border-bottom-color: var(--gold); box-shadow: 0 1px 0 var(--gold); }
+.field input:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.field [aria-invalid="true"] { border-bottom-color: #B3261E; box-shadow: 0 1px 0 #B3261E; }
+.field__error { min-height: 1.3em; font-size: .92rem; color: #B3261E; }
+.form__foot { display: grid; gap: .9rem; }
+.form__hint { font-size: .92rem; color: var(--ink-soft); }
+.form__status { padding: 1rem 1.2rem; border-radius: 2px; background: var(--cream); border-left: 3px solid var(--gold); }
+.form__status.is-error { border-left-color: #B3261E; background: #FBEDEC; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.btn[disabled] { opacity: .6; cursor: progress; transform: none; }
+@media (min-width: 960px) { .contact { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(3rem, 7vw, 7rem); } }
+
+/* ---------- 10. Footer & floating buttons ---------- */
+.site-footer { background: var(--charcoal); color: var(--on-dark-soft); padding: clamp(4rem, 8vw, 6rem) 0 2rem; font-size: 1rem; }
+.footer__grid { display: grid; gap: 2.75rem; padding-bottom: 3rem; border-bottom: 1px solid var(--line-light); }
+.footer__brand { display: grid; gap: 1.25rem; align-content: start; max-width: 24rem; }
+.footer__brand .brand { color: var(--on-dark); }
+.site-footer h3 { margin-bottom: 1rem; font-size: 1.25rem; color: var(--on-dark); }
+.footer__links { display: grid; gap: .55rem; }
+.footer__links a, .site-footer address a { transition: color .3s; }
+.footer__links a:hover, .site-footer address a:hover { color: var(--gold); }
+.site-footer address { display: grid; gap: .55rem; }
+.social { display: flex; gap: .7rem; }
+.social a { display: grid; place-items: center; width: 2.8rem; height: 2.8rem; border-radius: 50%; border: 1px solid var(--line-light); color: var(--on-dark); transition: background-color .35s, border-color .35s, color .35s, transform .35s var(--ease); }
+.social a:hover { background: var(--gold); border-color: var(--gold); color: var(--charcoal); transform: translateY(-3px); }
+.footer__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem; padding-top: 1.75rem; font-size: .92rem; }
+@media (min-width: 720px) { .footer__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1020px) { .footer__grid { grid-template-columns: 1.5fr 1fr 1.3fr 1fr; gap: 3rem; } }
+
+.fab-stack { position: fixed; z-index: 90; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); display: grid; gap: .75rem; justify-items: end; }
+.fab { display: grid; place-items: center; width: 3.4rem; height: 3.4rem; border-radius: 50%; border: 0; cursor: pointer; box-shadow: 0 16px 30px -12px rgba(0, 0, 0, .55); transition: transform .4s var(--ease), box-shadow .4s, opacity .4s, visibility .4s; }
+.fab:hover { transform: translateY(-3px) scale(1.04); }
+.fab .icon { width: 1.5rem; height: 1.5rem; }
+.fab--top { width: 2.9rem; height: 2.9rem; background: var(--charcoal); color: var(--gold); border: 1px solid var(--line-gold); opacity: 0; visibility: hidden; transform: translateY(10px); }
+.fab--top.is-visible { opacity: 1; visibility: visible; transform: none; }
+.fab--top.is-visible:hover { transform: translateY(-3px); }
+.fab--wa { position: relative; width: auto; padding: 0 1.1rem 0 .95rem; gap: .55rem; display: inline-flex; align-items: center; height: 3.4rem; border-radius: 999px; background: #25D366; color: #0B3D1E; font-weight: 500; }
+.fab--wa .icon { fill: currentColor; stroke: none; width: 1.7rem; height: 1.7rem; }
+.fab--wa .fab__label { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width .5s var(--ease); }
+.fab--wa:hover .fab__label, .fab--wa:focus-visible .fab__label { max-width: 9rem; }
+
+/* ---------- 11. Lightbox ---------- */
+.lightbox { width: 100%; max-width: none; height: 100%; max-height: none; margin: 0; padding: 0; border: 0; background: transparent; color: var(--on-dark); overflow: hidden; }
+.lightbox::backdrop { background: rgba(18, 17, 16, .9); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.lightbox[open] { animation: lb-in .5s var(--ease-out); }
+@keyframes lb-in { from { opacity: 0; transform: scale(.985); } }
+.lightbox__inner { position: relative; height: 100%; display: grid; place-content: center; justify-items: center; gap: 1rem; padding: 4.5rem 1rem 3.5rem; }
+.lightbox__art { aspect-ratio: var(--r, 1); width: min(92vw, calc(72svh * var(--r, 1)), 62rem); border-radius: 2px; box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9); cursor: default; }
+.lightbox__art.is-photo { aspect-ratio: auto; }
+.lightbox__cap { text-align: center; line-height: 1.4; }
+.lightbox__cap strong { display: block; font-family: var(--font-display); font-weight: 500; font-size: 1.35rem; }
+.lightbox__cap span { color: var(--on-dark-soft); font-size: .95rem; }
+.lightbox__count { position: absolute; top: 1.6rem; left: 1.5rem; font-size: .95rem; color: var(--on-dark-soft); }
+.lightbox__close { position: absolute; top: 1rem; right: 1rem; }
+.lightbox__nav { position: absolute; top: 50%; margin-top: -1.5rem; }
+.lightbox__nav--prev { left: .75rem; }
+.lightbox__nav--next { right: .75rem; }
+@media (min-width: 900px) { .lightbox__nav--prev { left: 2rem; } .lightbox__nav--next { right: 2rem; } .lightbox__close { top: 1.5rem; right: 2rem; } }
+
+/* ---------- 12. Reveal & motion ---------- */
+.js [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .9s var(--ease) var(--d, 0s), transform .9s var(--ease) var(--d, 0s); }
+.js [data-reveal].is-visible { opacity: 1; transform: none; }
+/* arches open like a display niche */
+.js [data-reveal="unveil"] { opacity: 1; transform: none; clip-path: inset(100% 0 0 0); transition: clip-path 1.3s var(--ease-out) var(--d, 0s); }
+.js [data-reveal="unveil"].is-visible { clip-path: inset(0); }
+
+/* ---------- 13. Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+ html { scroll-behavior: auto; }
+ *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+ .js [data-reveal], .js .hero-in, .js .hero__title .line > span { opacity: 1; transform: none; clip-path: none; }
+ .hero-ring { transform: none; }
+}
+</style>
+</head>
+<body>
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+<linearGradient id="g-gold-u" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="130" y2="170" spreadMethod="reflect"><stop offset="0" stop-color="#F7E9AD"/><stop offset=".3" stop-color="#D4B13F"/><stop offset=".58" stop-color="#9A7414"/><stop offset=".8" stop-color="#DDBE55"/><stop offset="1" stop-color="#F4E4A0"/></linearGradient>
+<linearGradient id="g-silver-u" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="130" y2="170" spreadMethod="reflect"><stop offset="0" stop-color="#FAFAF8"/><stop offset=".3" stop-color="#C5C9CD"/><stop offset=".6" stop-color="#80868D"/><stop offset=".82" stop-color="#E4E7E9"/><stop offset="1" stop-color="#F8F8F6"/></linearGradient>
+<linearGradient id="g-plat-u" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="130" y2="170" spreadMethod="reflect"><stop offset="0" stop-color="#F3F5F8"/><stop offset=".28" stop-color="#B7C0CB"/><stop offset=".6" stop-color="#7A8693"/><stop offset=".82" stop-color="#DDE2E8"/><stop offset="1" stop-color="#F6F8FA"/></linearGradient>
+<linearGradient id="g-gold-sign" x1="0" x2="1"><stop offset="0" stop-color="#E9D27A"/><stop offset=".5" stop-color="#C9A227"/><stop offset="1" stop-color="#F0DD97"/></linearGradient>
+<radialGradient id="g-pearl" cx=".34" cy=".3" r=".8"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#F1EADA"/><stop offset="1" stop-color="#C9BC9F"/></radialGradient>
+<radialGradient id="g-ruby" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#F0657C"/><stop offset=".5" stop-color="#B3202F"/><stop offset="1" stop-color="#6B0B1A"/></radialGradient>
+<radialGradient id="g-stone" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#DCEBF5"/><stop offset="1" stop-color="#9DB9CE"/></radialGradient>
+<radialGradient id="g-glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFEBB0" stop-opacity=".34"/><stop offset=".6" stop-color="#FFEBB0" stop-opacity=".08"/><stop offset="1" stop-color="#FFEBB0" stop-opacity="0"/></radialGradient>
+<radialGradient id="g-shadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<linearGradient id="g-bust-shade" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".42"/><stop offset=".3" stop-color="#000" stop-opacity="0"/><stop offset=".55" stop-color="#fff" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity=".5"/></linearGradient>
+<linearGradient id="g-dome-shade" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient>
+<linearGradient id="g-warm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF4CF"/><stop offset=".55" stop-color="#EBC768"/><stop offset="1" stop-color="#B98A1E"/></linearGradient>
+<linearGradient id="g-night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#141312"/><stop offset="1" stop-color="#2B2723"/></linearGradient>
+<linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6F0E2"/><stop offset="1" stop-color="#E3D7BB"/></linearGradient>
+<linearGradient id="g-floor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D1C19B"/><stop offset="1" stop-color="#B8A67C"/></linearGradient>
+<linearGradient id="g-niche" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF7DA"/><stop offset="1" stop-color="#F0DCA6"/></linearGradient>
+<linearGradient id="g-niche-dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4B3F2B"/><stop offset="1" stop-color="#1D1913"/></linearGradient>
+<linearGradient id="g-cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFEFB8" stop-opacity=".5"/><stop offset="1" stop-color="#FFEFB8" stop-opacity="0"/></linearGradient>
+<linearGradient id="g-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity=".05"/></linearGradient>
+<linearGradient id="g-reflect" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE9A8" stop-opacity=".4"/><stop offset="1" stop-color="#FFE9A8" stop-opacity="0"/></linearGradient>
+<path id="drop" d="M0 0C2 6 9 10 9 18A9 9 0 0 1 -9 18C-9 10 -2 6 0 0Z"/>
+<g id="e-jhumka"><rect x="-3" y="-62" width="6" height="36" style="fill:var(--metal)"/><circle cx="0" cy="-72" r="13" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)"/><circle cx="0" cy="-72" r="6.5" fill="url(#g-pearl)" stroke="rgba(0,0,0,.2)" stroke-width=".8"/><path d="M-42 30C-42 -50 42 -50 42 30Z" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><path d="M-42 30C-42 -50 42 -50 42 30Z" fill="url(#g-dome-shade)"/><path d="M-37 12Q0 -10 37 12" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="2"/><path d="M-28 -8Q0 -26 28 -8" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="2"/><circle cx="-30" cy="18.4" r="2.2" fill="rgba(0,0,0,.28)"/><circle cx="-20" cy="19.6" r="2.2" fill="rgba(0,0,0,.28)"/><circle cx="-10" cy="20.8" r="2.2" fill="rgba(0,0,0,.28)"/><circle cx="0" cy="22" r="2.2" fill="rgba(0,0,0,.28)"/><circle cx="10" cy="20.8" r="2.2" fill="rgba(0,0,0,.28)"/><circle cx="20" cy="19.6" r="2.2" fill="rgba(0,0,0,.28)"/><circle cx="30" cy="18.4" r="2.2" fill="rgba(0,0,0,.28)"/><circle cx="-38.4" cy="33" r="5.2" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="-28.799999999999997" cy="33" r="5.2" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="-19.2" cy="33" r="5.2" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="-9.6" cy="33" r="5.2" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="0" cy="33" r="5.2" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="9.6" cy="33" r="5.2" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="19.2" cy="33" r="5.2" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="28.799999999999997" cy="33" r="5.2" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="38.4" cy="33" r="5.2" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><path d="M-28 38V50" stroke="url(#g-gold-u)" stroke-width="1.6"/><circle cx="-28" cy="58" r="7.2" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><path d="M-14 38V48" stroke="url(#g-gold-u)" stroke-width="1.6"/><circle cx="-14" cy="56" r="7.2" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><path d="M0 38V46" stroke="url(#g-gold-u)" stroke-width="1.6"/><circle cx="0" cy="54" r="7.2" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><path d="M14 38V48" stroke="url(#g-gold-u)" stroke-width="1.6"/><circle cx="14" cy="56" r="7.2" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><path d="M28 38V50" stroke="url(#g-gold-u)" stroke-width="1.6"/><circle cx="28" cy="58" r="7.2" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/></g><g id="e-chandelier"><rect x="-2.6" y="8" width="5.2" height="16" style="fill:var(--metal)"/><circle r="12" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)"/><circle r="5.6" fill="url(#g-ruby)"/><path d="M0 20C30 22 56 40 54 72C38 66 18 68 0 76C-18 68 -38 66 -54 72C-56 40 -30 22 0 20Z" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><path d="M0 20C30 22 56 40 54 72C38 66 18 68 0 76C-18 68 -38 66 -54 72C-56 40 -30 22 0 20Z" fill="url(#g-dome-shade)"/><circle cx="0" cy="50" r="13" fill="rgba(0,0,0,.26)"/><circle cx="0" cy="50" r="9" fill="url(#g-ruby)" style="stroke:var(--metal)" stroke-width="2"/><circle cx="-2.5" cy="47" r="2" fill="rgba(255,255,255,.7)"/><circle cx="-34" cy="54" r="3" fill="rgba(0,0,0,.26)"/><circle cx="-22" cy="62" r="3" fill="rgba(0,0,0,.26)"/><circle cx="22" cy="62" r="3" fill="rgba(0,0,0,.26)"/><circle cx="34" cy="54" r="3" fill="rgba(0,0,0,.26)"/><circle cx="-40" cy="40" r="3" fill="rgba(0,0,0,.26)"/><circle cx="40" cy="40" r="3" fill="rgba(0,0,0,.26)"/><path d="M-46 70V90" stroke="url(#g-gold-u)" stroke-width="2.2"/><circle cx="-46" cy="96" r="6.6" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><path d="M-23 73V105" stroke="url(#g-gold-u)" stroke-width="2.2"/><circle cx="-23" cy="111" r="6.6" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><path d="M0 76V120" stroke="url(#g-gold-u)" stroke-width="2.2"/><use href="#drop" transform="translate(0 118) scale(1.25)" fill="url(#g-ruby)" style="stroke:var(--metal)" stroke-width="2.2"/><path d="M23 73V105" stroke="url(#g-gold-u)" stroke-width="2.2"/><circle cx="23" cy="111" r="6.6" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><path d="M46 70V90" stroke="url(#g-gold-u)" stroke-width="2.2"/><circle cx="46" cy="96" r="6.6" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/></g><g id="e-stud"><circle r="26.5" fill="rgba(0,0,0,.25)"/><circle r="25" fill="none" style="stroke:var(--metal)" stroke-width="5.5"/><polygon points="0 -11.5 8.04 -19.4 8.13 -8.13" fill="#E9F3FA" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="-8.04 -19.4 8.04 -19.4 0 -11.5" fill="#B8D0E2" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="8.13 -8.13 19.4 -8.04 11.5 0" fill="#CFE1EE" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="8.04 -19.4 19.4 -8.04 8.13 -8.13" fill="#DCEAF4" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="11.5 0 19.4 8.04 8.13 8.13" fill="#B3CCDF" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="19.4 -8.04 19.4 8.04 11.5 0" fill="#F6FAFD" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="8.13 8.13 8.04 19.4 0 11.5" fill="#9DBAD0" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="19.4 8.04 8.04 19.4 8.13 8.13" fill="#FFFFFF" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="0 11.5 -8.04 19.4 -8.13 8.13" fill="#B8D0E2" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="8.04 19.4 -8.04 19.4 0 11.5" fill="#E9F3FA" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="-8.13 8.13 -19.4 8.04 -11.5 0" fill="#DCEAF4" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="-8.04 19.4 -19.4 8.04 -8.13 8.13" fill="#CFE1EE" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="-11.5 0 -19.4 -8.04 -8.13 -8.13" fill="#F6FAFD" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="-19.4 8.04 -19.4 -8.04 -11.5 0" fill="#B3CCDF" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="-8.13 -8.13 -8.04 -19.4 0 -11.5" fill="#FFFFFF" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="-19.4 -8.04 -8.04 -19.4 -8.13 -8.13" fill="#9DBAD0" stroke="rgba(100,135,165,.75)" stroke-width=".5"/><polygon points="0 -11.5 8.13 -8.13 11.5 0 8.13 8.13 0 11.5 -8.13 8.13 -11.5 0 -8.13 -8.13" fill="#F7FBFE" stroke="rgba(100,135,165,.8)" stroke-width=".6"/><circle cx="18.38" cy="-18.38" r="3.4" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".7"/><circle cx="18.38" cy="18.38" r="3.4" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".7"/><circle cx="-18.38" cy="18.38" r="3.4" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".7"/><circle cx="-18.38" cy="-18.38" r="3.4" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width=".7"/></g>
+</defs>
+<symbol id="gem" viewBox="0 0 100 92">
+<g stroke="rgba(96,128,156,.85)" stroke-width=".7" stroke-linejoin="round">
+<polygon points="2,32 24,6 30,32" fill="#DCEBF5"/><polygon points="24,6 30,32 50,32" fill="#FFFFFF"/><polygon points="24,6 76,6 50,32" fill="#F2F9FD"/>
+<polygon points="76,6 50,32 70,32" fill="#E4EFF7"/><polygon points="76,6 70,32 98,32" fill="#C6DAE9"/>
+<polygon points="2,32 30,32 50,90" fill="#B3CDDF"/><polygon points="30,32 50,32 50,90" fill="#E5F0F8"/><polygon points="50,32 70,32 50,90" fill="#CBDFED"/><polygon points="70,32 98,32 50,90" fill="#9AB8CE"/>
+</g></symbol>
+<symbol id="spark" viewBox="-10 -10 20 20"><path d="M0-10C1-3 3-1 10 0C3 1 1 3 0 10C-1 3-3 1-10 0C-3-1-1-3 0-10Z" style="fill:var(--spark,#fff)"/></symbol>
+<symbol id="neck-coin" viewBox="0 0 400 500"><ellipse cx="200" cy="290" rx="185" ry="215" fill="url(#g-glow)"/><g transform="translate(-60 -100.6) scale(1.3)">
+<path d="M158 212V292C158 330 100 342 62 372C38 392 30 430 28 500H372C370 430 362 392 338 372C300 342 242 330 242 292V212C242 196 158 196 158 212Z" style="fill:var(--bust)"/>
+<path d="M158 212V292C158 330 100 342 62 372C38 392 30 430 28 500H372C370 430 362 392 338 372C300 342 242 330 242 292V212C242 196 158 196 158 212Z" fill="url(#g-bust-shade)"/>
+<ellipse cx="200" cy="212" rx="42" ry="9" style="fill:var(--bust)"/><ellipse cx="200" cy="212" rx="42" ry="9" fill="rgba(255,255,255,.14)"/><path d="M157 262 C160 312 240 312 243 262" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="4.4" stroke-linecap="round" stroke-dasharray="6 2.6" transform="translate(0 2)"/><path d="M157 262 C160 312 240 312 243 262" fill="none" style="stroke:var(--metal)" stroke-width="4.4" stroke-linecap="round" stroke-dasharray="6 2.6"/><path d="M154 276 C150 352 250 352 246 276" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="4.4" stroke-linecap="round" stroke-dasharray="6 2.6" transform="translate(0 2)"/><path d="M154 276 C150 352 250 352 246 276" fill="none" style="stroke:var(--metal)" stroke-width="4.4" stroke-linecap="round" stroke-dasharray="6 2.6"/><circle cx="200" cy="336" r="3.6" fill="none" style="stroke:var(--metal)" stroke-width="2"/><circle cx="200" cy="347" r="8.5" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><path d="M152 290 C120 420 280 420 248 290" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 2.6" transform="translate(0 2)"/><path d="M152 290 C120 420 280 420 248 290" fill="none" style="stroke:var(--metal)" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 2.6"/><circle cx="200" cy="391" r="3.6" fill="none" style="stroke:var(--metal)" stroke-width="2"/><g transform="translate(200 417)"><circle r="25" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle r="19" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="1.2"/><ellipse cx="0" cy="-11.25" rx="2.75" ry="5" transform="rotate(0)" fill="rgba(0,0,0,.22)"/><ellipse cx="0" cy="-11.25" rx="2.75" ry="5" transform="rotate(45)" fill="rgba(0,0,0,.22)"/><ellipse cx="0" cy="-11.25" rx="2.75" ry="5" transform="rotate(90)" fill="rgba(0,0,0,.22)"/><ellipse cx="0" cy="-11.25" rx="2.75" ry="5" transform="rotate(135)" fill="rgba(0,0,0,.22)"/><ellipse cx="0" cy="-11.25" rx="2.75" ry="5" transform="rotate(180)" fill="rgba(0,0,0,.22)"/><ellipse cx="0" cy="-11.25" rx="2.75" ry="5" transform="rotate(225)" fill="rgba(0,0,0,.22)"/><ellipse cx="0" cy="-11.25" rx="2.75" ry="5" transform="rotate(270)" fill="rgba(0,0,0,.22)"/><ellipse cx="0" cy="-11.25" rx="2.75" ry="5" transform="rotate(315)" fill="rgba(0,0,0,.22)"/><circle r="4.25" fill="rgba(0,0,0,.32)"/><path d="M-20 -5 A20.5 20.5 0 0 1 -5 -20" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round"/></g></g></symbol>
+<symbol id="neck-bridal" viewBox="0 0 400 500"><ellipse cx="200" cy="290" rx="185" ry="215" fill="url(#g-glow)"/><g transform="translate(-24 -52.84) scale(1.12)">
+<path d="M158 212V292C158 330 100 342 62 372C38 392 30 430 28 500H372C370 430 362 392 338 372C300 342 242 330 242 292V212C242 196 158 196 158 212Z" style="fill:var(--bust)"/>
+<path d="M158 212V292C158 330 100 342 62 372C38 392 30 430 28 500H372C370 430 362 392 338 372C300 342 242 330 242 292V212C242 196 158 196 158 212Z" fill="url(#g-bust-shade)"/>
+<ellipse cx="200" cy="212" rx="42" ry="9" style="fill:var(--bust)"/><ellipse cx="200" cy="212" rx="42" ry="9" fill="rgba(255,255,255,.14)"/><path d="M157 262 C160 312 240 312 243 262" fill="none" stroke="#8E8265" stroke-width="8.6" stroke-linecap="round" stroke-dasharray="0 9.5" transform="translate(0 1.2)"/><path d="M157 262 C160 312 240 312 243 262" fill="none" stroke="#F8F2E4" stroke-width="7" stroke-linecap="round" stroke-dasharray="0 9.5"/><path d="M157 262 C160 312 240 312 243 262" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-dasharray="0 9.5" transform="translate(-1.26 -1.4)"/><path d="M154 276 C150 352 250 352 246 276" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="1 7" transform="translate(0 2)"/><path d="M154 276 C150 352 250 352 246 276" fill="none" style="stroke:var(--metal)" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="1 7"/><use href="#drop" transform="translate(162.41600000000003 314.48000000000013) scale(0.8)" fill="url(#g-ruby)" style="stroke:var(--metal)" stroke-width="2.2"/><use href="#drop" transform="translate(179.102 329.87000000000006) scale(0.8)" fill="url(#g-ruby)" style="stroke:var(--metal)" stroke-width="2.2"/><use href="#drop" transform="translate(200 335) scale(1.05)" fill="url(#g-ruby)" style="stroke:var(--metal)" stroke-width="2.2"/><use href="#drop" transform="translate(220.89799999999997 329.87) scale(0.8)" fill="url(#g-ruby)" style="stroke:var(--metal)" stroke-width="2.2"/><use href="#drop" transform="translate(237.584 314.48) scale(0.8)" fill="url(#g-ruby)" style="stroke:var(--metal)" stroke-width="2.2"/><path d="M152 290 C120 420 280 420 248 290" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="6 2.6" transform="translate(0 2)"/><path d="M152 290 C120 420 280 420 248 290" fill="none" style="stroke:var(--metal)" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="6 2.6"/><circle cx="151.14291200000002" cy="347.5640000000001" r="5.2" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><circle cx="164.67199999999997" cy="371.8999999999999" r="5.2" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><circle cx="235.32799999999997" cy="371.8999999999999" r="5.2" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><circle cx="248.85708799999998" cy="347.56399999999996" r="5.2" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><circle cx="200" cy="391" r="3.6" fill="none" style="stroke:var(--metal)" stroke-width="2"/><g transform="translate(200 420)"><circle r="33" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)"/><circle cx="0" cy="-22" r="6" transform="rotate(0)" fill="url(#g-pearl)" stroke="rgba(0,0,0,.22)" stroke-width=".8"/><circle cx="0" cy="-22" r="6" transform="rotate(36)" fill="url(#g-pearl)" stroke="rgba(0,0,0,.22)" stroke-width=".8"/><circle cx="0" cy="-22" r="6" transform="rotate(72)" fill="url(#g-pearl)" stroke="rgba(0,0,0,.22)" stroke-width=".8"/><circle cx="0" cy="-22" r="6" transform="rotate(108)" fill="url(#g-pearl)" stroke="rgba(0,0,0,.22)" stroke-width=".8"/><circle cx="0" cy="-22" r="6" transform="rotate(144)" fill="url(#g-pearl)" stroke="rgba(0,0,0,.22)" stroke-width=".8"/><circle cx="0" cy="-22" r="6" transform="rotate(180)" fill="url(#g-pearl)" stroke="rgba(0,0,0,.22)" stroke-width=".8"/><circle cx="0" cy="-22" r="6" transform="rotate(216)" fill="url(#g-pearl)" stroke="rgba(0,0,0,.22)" stroke-width=".8"/><circle cx="0" cy="-22" r="6" transform="rotate(252)" fill="url(#g-pearl)" stroke="rgba(0,0,0,.22)" stroke-width=".8"/><circle cx="0" cy="-22" r="6" transform="rotate(288)" fill="url(#g-pearl)" stroke="rgba(0,0,0,.22)" stroke-width=".8"/><circle cx="0" cy="-22" r="6" transform="rotate(324)" fill="url(#g-pearl)" stroke="rgba(0,0,0,.22)" stroke-width=".8"/><circle r="14" style="fill:var(--metal)" stroke="rgba(0,0,0,.28)"/><circle r="9.5" fill="url(#g-ruby)"/><circle cx="-3" cy="-3.5" r="2.4" fill="rgba(255,255,255,.7)"/></g><path d="M172 442 V459.5" stroke="url(#g-gold-u)" stroke-width="2"/><circle cx="172" cy="466" r="6.5" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><path d="M200 452 V468.5" stroke="url(#g-gold-u)" stroke-width="2"/><circle cx="200" cy="476" r="7.5" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/><path d="M228 442 V459.5" stroke="url(#g-gold-u)" stroke-width="2"/><circle cx="228" cy="466" r="6.5" fill="url(#g-pearl)" stroke="rgba(0,0,0,.18)" stroke-width=".8"/></g></symbol>
+<symbol id="neck-haram" viewBox="0 0 400 500"><ellipse cx="200" cy="290" rx="185" ry="215" fill="url(#g-glow)"/><g transform="translate(-24 -52.08) scale(1.12)">
+<path d="M158 212V292C158 330 100 342 62 372C38 392 30 430 28 500H372C370 430 362 392 338 372C300 342 242 330 242 292V212C242 196 158 196 158 212Z" style="fill:var(--bust)"/>
+<path d="M158 212V292C158 330 100 342 62 372C38 392 30 430 28 500H372C370 430 362 392 338 372C300 342 242 330 242 292V212C242 196 158 196 158 212Z" fill="url(#g-bust-shade)"/>
+<ellipse cx="200" cy="212" rx="42" ry="9" style="fill:var(--bust)"/><ellipse cx="200" cy="212" rx="42" ry="9" fill="rgba(255,255,255,.14)"/><path d="M157 262 C160 312 240 312 243 262" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 2.6" transform="translate(0 2)"/><path d="M157 262 C160 312 240 312 243 262" fill="none" style="stroke:var(--metal)" stroke-width="4" stroke-linecap="round" stroke-dasharray="6 2.6"/><path d="M154 276 C150 352 250 352 246 276" fill="none" stroke="rgba(0,0,0,.32)" stroke-width="12.5" stroke-linecap="round" stroke-dasharray="0 15" transform="translate(0 1.6)"/><path d="M154 276 C150 352 250 352 246 276" fill="none" style="stroke:var(--metal)" stroke-width="11" stroke-linecap="round" stroke-dasharray="0 15"/><path d="M154 276 C150 352 250 352 246 276" fill="none" stroke="rgba(0,0,0,.24)" stroke-width="4.62" stroke-linecap="round" stroke-dasharray="0 15"/><path d="M154 276 C150 352 250 352 246 276" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.54" stroke-linecap="round" stroke-dasharray="0 15" transform="translate(-2.42 -2.64)"/><path d="M150 286 C108 452 292 452 250 286" fill="none" stroke="rgba(0,0,0,.32)" stroke-width="16.5" stroke-linecap="round" stroke-dasharray="0 20.5" transform="translate(0 1.6)"/><path d="M150 286 C108 452 292 452 250 286" fill="none" style="stroke:var(--metal)" stroke-width="15" stroke-linecap="round" stroke-dasharray="0 20.5"/><path d="M150 286 C108 452 292 452 250 286" fill="none" stroke="rgba(0,0,0,.24)" stroke-width="6.3" stroke-linecap="round" stroke-dasharray="0 20.5"/><path d="M150 286 C108 452 292 452 250 286" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2.1" stroke-linecap="round" stroke-dasharray="0 20.5" transform="translate(-3.3 -3.6)"/><circle cx="200" cy="412" r="3.6" fill="none" style="stroke:var(--metal)" stroke-width="2"/><g transform="translate(200 440)"><ellipse cx="0" cy="25" rx="8.5" ry="15" transform="rotate(-62)" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><path d="M0 14V34" transform="rotate(-62)" stroke="rgba(0,0,0,.22)" stroke-width="1.2"/><ellipse cx="0" cy="25" rx="8.5" ry="15" transform="rotate(-31)" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><path d="M0 14V34" transform="rotate(-31)" stroke="rgba(0,0,0,.22)" stroke-width="1.2"/><ellipse cx="0" cy="25" rx="8.5" ry="15" transform="rotate(0)" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><path d="M0 14V34" transform="rotate(0)" stroke="rgba(0,0,0,.22)" stroke-width="1.2"/><ellipse cx="0" cy="25" rx="8.5" ry="15" transform="rotate(31)" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><path d="M0 14V34" transform="rotate(31)" stroke="rgba(0,0,0,.22)" stroke-width="1.2"/><ellipse cx="0" cy="25" rx="8.5" ry="15" transform="rotate(62)" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><path d="M0 14V34" transform="rotate(62)" stroke="rgba(0,0,0,.22)" stroke-width="1.2"/><circle r="23" style="fill:var(--metal)" stroke="rgba(0,0,0,.3)"/><circle r="17.5" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="1.2"/><circle r="9" fill="url(#g-ruby)" stroke="rgba(0,0,0,.25)"/><circle cx="-2.5" cy="-3" r="2.2" fill="rgba(255,255,255,.7)"/></g></g></symbol>
+<symbol id="neck-pendant" viewBox="0 0 400 500"><ellipse cx="200" cy="290" rx="185" ry="215" fill="url(#g-glow)"/><g transform="translate(-90 -126.75) scale(1.45)">
+<path d="M158 212V292C158 330 100 342 62 372C38 392 30 430 28 500H372C370 430 362 392 338 372C300 342 242 330 242 292V212C242 196 158 196 158 212Z" style="fill:var(--bust)"/>
+<path d="M158 212V292C158 330 100 342 62 372C38 392 30 430 28 500H372C370 430 362 392 338 372C300 342 242 330 242 292V212C242 196 158 196 158 212Z" fill="url(#g-bust-shade)"/>
+<ellipse cx="200" cy="212" rx="42" ry="9" style="fill:var(--bust)"/><ellipse cx="200" cy="212" rx="42" ry="9" fill="rgba(255,255,255,.14)"/><path d="M157 262 C160 312 240 312 243 262" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="5 2.2" transform="translate(0 2)"/><path d="M157 262 C160 312 240 312 243 262" fill="none" style="stroke:var(--metal)" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="5 2.2"/><path d="M154 276 C150 352 250 352 246 276" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="5 2.2" transform="translate(0 2)"/><path d="M154 276 C150 352 250 352 246 276" fill="none" style="stroke:var(--metal)" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="5 2.2"/><path d="M200 333v8" stroke="rgba(0,0,0,.25)" stroke-width="3" transform="translate(0 1)"/><path d="M200 333v8" style="stroke:var(--metal)" stroke-width="2.4"/><circle cx="200" cy="364" r="31" fill="none" style="stroke:var(--metal)" stroke-width="5"/><circle cx="200" cy="364" r="27" fill="rgba(0,0,0,.22)"/><use href="#gem" x="176" y="343" width="48" height="44.16"/><use href="#spark" x="159" y="333" width="14" height="14" opacity="0.9"/><circle cx="200" cy="333" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="215.5" cy="337.15" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="226.85" cy="348.5" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="231" cy="364" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="226.85" cy="379.5" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="215.5" cy="390.85" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="200" cy="395" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="184.5" cy="390.85" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="173.15" cy="379.5" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="169" cy="364" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="173.15" cy="348.5" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/><circle cx="184.5" cy="337.15" r="2.1" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".6"/></g></symbol>
+<symbol id="ring-solitaire" viewBox="0 0 400 500"><ellipse cx="200" cy="448" rx="124" ry="15" fill="url(#g-shadow)"/><ellipse cx="200" cy="260" rx="185" ry="215" fill="url(#g-glow)"/><circle cx="200" cy="326" r="104" fill="none" style="stroke:var(--metal)" stroke-width="21"/><circle cx="200" cy="326" r="95" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="3"/><circle cx="200" cy="326" r="112.5" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="141.37 706.86" stroke-dashoffset="-353.43"/><circle cx="174.84" cy="225.09" r="4" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="225.16" cy="225.09" r="4" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="154.41" cy="232.53" r="3.84" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="245.59" cy="232.53" r="3.84" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="135.97" cy="244.05" r="3.67" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="264.03" cy="244.05" r="3.67" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="120.33" cy="259.15" r="3.5" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="279.67" cy="259.15" r="3.5" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="108.17" cy="277.17" r="3.33" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="291.83" cy="277.17" r="3.33" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="100.03" cy="297.33" r="3.16" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><circle cx="299.97" cy="297.33" r="3.16" fill="url(#g-stone)" stroke="rgba(0,0,0,.28)" stroke-width=".8"/><use href="#gem" x="138" y="108" width="124" height="114.08"/><g style="stroke:var(--metal)" fill="none" stroke-width="7" stroke-linecap="round"><path d="M178 216C172 194 160 170 150 148"/><path d="M222 216C228 194 240 170 250 148"/></g><circle cx="150" cy="147" r="4.6" style="fill:var(--metal)" stroke="rgba(0,0,0,.25)" stroke-width=".8"/><circle cx="250" cy="147" r="4.6" style="fill:var(--metal)" stroke="rgba(0,0,0,.25)" stroke-width=".8"/><use href="#spark" x="143" y="97" width="30" height="30" opacity="0.95"/><use href="#spark" x="254" y="90" width="16" height="16" opacity="0.8"/></symbol>
+<symbol id="ring-eternity" viewBox="0 0 400 500"><ellipse cx="200" cy="442" rx="132" ry="15" fill="url(#g-shadow)"/><ellipse cx="200" cy="260" rx="185" ry="215" fill="url(#g-glow)"/><circle cx="200" cy="262" r="120" fill="none" style="stroke:var(--metal)" stroke-width="38"/><circle cx="200" cy="262" r="102.5" fill="none" stroke="rgba(0,0,0,.32)" stroke-width="3"/><circle cx="200" cy="262" r="137.5" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"/><circle cx="320" cy="262" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="317.6" cy="259.4" r="2.3" fill="#fff" opacity=".9"/><circle cx="317.38" cy="286.95" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="314.98" cy="284.35" r="2.3" fill="#fff" opacity=".9"/><circle cx="309.63" cy="310.81" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="307.23" cy="308.21" r="2.3" fill="#fff" opacity=".9"/><circle cx="297.08" cy="332.53" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="294.68" cy="329.93" r="2.3" fill="#fff" opacity=".9"/><circle cx="280.3" cy="351.18" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="277.9" cy="348.58" r="2.3" fill="#fff" opacity=".9"/><circle cx="260" cy="365.92" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="257.6" cy="363.32" r="2.3" fill="#fff" opacity=".9"/><circle cx="237.08" cy="376.13" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="234.68" cy="373.53" r="2.3" fill="#fff" opacity=".9"/><circle cx="212.54" cy="381.34" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="210.14" cy="378.74" r="2.3" fill="#fff" opacity=".9"/><circle cx="187.46" cy="381.34" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="185.06" cy="378.74" r="2.3" fill="#fff" opacity=".9"/><circle cx="162.92" cy="376.13" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="160.52" cy="373.53" r="2.3" fill="#fff" opacity=".9"/><circle cx="140" cy="365.92" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="137.6" cy="363.32" r="2.3" fill="#fff" opacity=".9"/><circle cx="119.7" cy="351.18" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="117.3" cy="348.58" r="2.3" fill="#fff" opacity=".9"/><circle cx="102.92" cy="332.53" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="100.52" cy="329.93" r="2.3" fill="#fff" opacity=".9"/><circle cx="90.37" cy="310.81" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="87.97" cy="308.21" r="2.3" fill="#fff" opacity=".9"/><circle cx="82.62" cy="286.95" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="80.22" cy="284.35" r="2.3" fill="#fff" opacity=".9"/><circle cx="80" cy="262" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="77.6" cy="259.4" r="2.3" fill="#fff" opacity=".9"/><circle cx="82.62" cy="237.05" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="80.22" cy="234.45" r="2.3" fill="#fff" opacity=".9"/><circle cx="90.37" cy="213.19" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="87.97" cy="210.59" r="2.3" fill="#fff" opacity=".9"/><circle cx="102.92" cy="191.47" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="100.52" cy="188.87" r="2.3" fill="#fff" opacity=".9"/><circle cx="119.7" cy="172.82" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="117.3" cy="170.22" r="2.3" fill="#fff" opacity=".9"/><circle cx="140" cy="158.08" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="137.6" cy="155.48" r="2.3" fill="#fff" opacity=".9"/><circle cx="162.92" cy="147.87" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="160.52" cy="145.27" r="2.3" fill="#fff" opacity=".9"/><circle cx="187.46" cy="142.66" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="185.06" cy="140.06" r="2.3" fill="#fff" opacity=".9"/><circle cx="212.54" cy="142.66" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="210.14" cy="140.06" r="2.3" fill="#fff" opacity=".9"/><circle cx="237.08" cy="147.87" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="234.68" cy="145.27" r="2.3" fill="#fff" opacity=".9"/><circle cx="260" cy="158.08" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="257.6" cy="155.48" r="2.3" fill="#fff" opacity=".9"/><circle cx="280.3" cy="172.82" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="277.9" cy="170.22" r="2.3" fill="#fff" opacity=".9"/><circle cx="297.08" cy="191.47" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="294.68" cy="188.87" r="2.3" fill="#fff" opacity=".9"/><circle cx="309.63" cy="213.19" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="307.23" cy="210.59" r="2.3" fill="#fff" opacity=".9"/><circle cx="317.38" cy="237.05" r="9.2" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="314.98" cy="234.45" r="2.3" fill="#fff" opacity=".9"/><use href="#spark" x="91" y="137" width="26" height="26" opacity="0.95"/><use href="#spark" x="292" y="384" width="16" height="16" opacity="0.8"/></symbol>
+<symbol id="earrings-jhumka" viewBox="0 0 400 500"><ellipse cx="200" cy="290" rx="185" ry="215" fill="url(#g-glow)"/><use href="#e-jhumka" transform="translate(110 252) scale(1.45)"/><use href="#e-jhumka" transform="translate(290 252) scale(1.45)"/><use href="#spark" x="188" y="138" width="24" height="24" opacity="0.9"/><use href="#spark" x="193" y="393" width="14" height="14" opacity="0.7"/></symbol>
+<symbol id="earrings-chandelier" viewBox="0 0 400 500"><ellipse cx="200" cy="290" rx="185" ry="215" fill="url(#g-glow)"/><use href="#e-chandelier" transform="translate(112 136) scale(1.4)"/><use href="#e-chandelier" transform="translate(288 136) scale(1.4)"/><use href="#spark" x="189" y="179" width="22" height="22" opacity="0.9"/><use href="#spark" x="194" y="374" width="12" height="12" opacity="0.7"/></symbol>
+<symbol id="earrings-studs" viewBox="0 0 400 500"><ellipse cx="200" cy="250" rx="185" ry="215" fill="url(#g-glow)"/><use href="#e-stud" transform="translate(108 250) scale(2.6)"/><use href="#e-stud" transform="translate(292 250) scale(2.6)"/><use href="#spark" x="39" y="147" width="26" height="26" opacity="0.95"/><use href="#spark" x="340" y="340" width="20" height="20" opacity="0.8"/><use href="#spark" x="194" y="246" width="12" height="12" opacity="0.6"/></symbol>
+<symbol id="bangles" viewBox="0 0 400 500"><ellipse cx="200" cy="290" rx="185" ry="215" fill="url(#g-glow)"/><ellipse cx="200" cy="174" rx="132" ry="42" fill="rgba(0,0,0,.28)"/><ellipse cx="200" cy="168" rx="119" ry="33" fill="rgba(0,0,0,.4)"/><ellipse cx="200" cy="168" rx="128" ry="40" fill="none" style="stroke:var(--metal)" stroke-width="15"/><ellipse cx="200" cy="168" rx="121.5" ry="33.5" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="2"/><ellipse cx="200" cy="168" rx="128" ry="40" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="15" stroke-dasharray="5 7"/><ellipse cx="200" cy="168" rx="133" ry="45" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="124.22 564.63" stroke-dashoffset="-45.17"/><ellipse cx="200" cy="232" rx="132" ry="42" fill="rgba(0,0,0,.28)"/><ellipse cx="200" cy="226" rx="119" ry="33" fill="rgba(0,0,0,.4)"/><ellipse cx="200" cy="226" rx="128" ry="40" fill="none" style="stroke:var(--metal)" stroke-width="15"/><ellipse cx="200" cy="226" rx="121.5" ry="33.5" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="2"/><ellipse cx="200" cy="226" rx="133" ry="45" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="124.22 564.63" stroke-dashoffset="-45.17"/><ellipse cx="200" cy="290" rx="132" ry="42" fill="rgba(0,0,0,.28)"/><ellipse cx="200" cy="284" rx="119" ry="33" fill="rgba(0,0,0,.4)"/><ellipse cx="200" cy="284" rx="128" ry="40" fill="none" style="stroke:var(--metal)" stroke-width="15"/><ellipse cx="200" cy="284" rx="121.5" ry="33.5" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="2"/><circle cx="318.68" cy="298.98" r="4.4" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="299.47" cy="309.17" r="4.4" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="271.58" cy="317.16" r="4.4" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="237.42" cy="322.25" r="4.4" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="200" cy="324" r="4.4" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="162.58" cy="322.25" r="4.4" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="128.42" cy="317.16" r="4.4" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="100.53" cy="309.17" r="4.4" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><circle cx="81.32" cy="298.98" r="4.4" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width=".8"/><ellipse cx="200" cy="284" rx="133" ry="45" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="124.22 564.63" stroke-dashoffset="-45.17"/><ellipse cx="200" cy="348" rx="132" ry="42" fill="rgba(0,0,0,.28)"/><ellipse cx="200" cy="342" rx="119" ry="33" fill="rgba(0,0,0,.4)"/><ellipse cx="200" cy="342" rx="128" ry="40" fill="none" style="stroke:var(--metal)" stroke-width="15"/><ellipse cx="200" cy="342" rx="121.5" ry="33.5" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="2"/><ellipse cx="200" cy="342" rx="128" ry="40" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="5" stroke-linecap="round" stroke-dasharray="0 11"/><ellipse cx="200" cy="342" rx="133" ry="45" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="124.22 564.63" stroke-dashoffset="-45.17"/><ellipse cx="200" cy="406" rx="132" ry="42" fill="rgba(0,0,0,.28)"/><ellipse cx="200" cy="400" rx="119" ry="33" fill="rgba(0,0,0,.4)"/><ellipse cx="200" cy="400" rx="128" ry="40" fill="none" style="stroke:var(--metal)" stroke-width="15"/><ellipse cx="200" cy="400" rx="121.5" ry="33.5" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="2"/><ellipse cx="200" cy="400" rx="133" ry="45" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="124.22 564.63" stroke-dashoffset="-45.17"/><use href="#spark" x="323" y="139" width="22" height="22" opacity="0.9"/><use href="#spark" x="71" y="413" width="14" height="14" opacity="0.7"/></symbol>
+<symbol id="scene-entrance" viewBox="0 0 800 400"><rect width="800" height="400" fill="url(#g-night)"/><ellipse cx="400" cy="120" rx="360" ry="190" fill="url(#g-glow)" opacity=".5"/><rect x="50" y="34" width="700" height="334" fill="#2B2824" stroke="rgba(201,162,39,.6)" stroke-width="1.6"/><rect x="50" y="34" width="700" height="26" fill="#211E1B"/><circle cx="68" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="88.4" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="108.8" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="129.2" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="149.6" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="170" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="190.39999999999998" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="210.79999999999998" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="231.2" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="251.6" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="272" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="292.4" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="312.79999999999995" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="333.2" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="353.59999999999997" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="374" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="394.4" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="414.79999999999995" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="435.2" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="455.59999999999997" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="476" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="496.4" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="516.8" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="537.2" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="557.5999999999999" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="578" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="598.4" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="618.8" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="639.1999999999999" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="659.5999999999999" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="680" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="700.4" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="720.8" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><circle cx="741.1999999999999" cy="47" r="2.2" fill="rgba(201,162,39,.7)"/><text x="400" y="92" text-anchor="middle" font-family="'Bodoni Moda','Didot',Georgia,serif" font-size="34" letter-spacing="12" fill="url(#g-gold-sign)">SUVARNA</text><text x="400" y="110" text-anchor="middle" font-family="'Jost','Segoe UI',sans-serif" font-size="11" letter-spacing="7" fill="rgba(250,249,246,.7)">HERITAGE JEWELLERS</text><path d="M100 332V216A45 45 0 0 1 190 216V332Z" fill="url(#g-warm)" stroke="rgba(201,162,39,.9)" stroke-width="2.4"/><path d="M100 296H190" stroke="rgba(90,60,10,.45)" stroke-width="2"/><path d="M100 252H190" stroke="rgba(90,60,10,.3)" stroke-width="1.5"/><use href="#gem" x="110" y="270" width="22" height="20.24"/><use href="#gem" x="134" y="266" width="26" height="23.92"/><use href="#gem" x="162" y="272" width="20" height="18.4"/><path d="M114 218Q145 262 176 218" fill="none" stroke="#8F6B0E" stroke-width="2.6" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="145" cy="246" r="5" fill="#8F6B0E"/><path d="M205 332V216A45 45 0 0 1 295 216V332Z" fill="url(#g-warm)" stroke="rgba(201,162,39,.9)" stroke-width="2.4"/><path d="M205 296H295" stroke="rgba(90,60,10,.45)" stroke-width="2"/><path d="M205 252H295" stroke="rgba(90,60,10,.3)" stroke-width="1.5"/><use href="#gem" x="215" y="270" width="22" height="20.24"/><use href="#gem" x="239" y="266" width="26" height="23.92"/><use href="#gem" x="267" y="272" width="20" height="18.4"/><path d="M219 218Q250 262 281 218" fill="none" stroke="#8F6B0E" stroke-width="2.6" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="250" cy="246" r="5" fill="#8F6B0E"/><path d="M505 332V216A45 45 0 0 1 595 216V332Z" fill="url(#g-warm)" stroke="rgba(201,162,39,.9)" stroke-width="2.4"/><path d="M505 296H595" stroke="rgba(90,60,10,.45)" stroke-width="2"/><path d="M505 252H595" stroke="rgba(90,60,10,.3)" stroke-width="1.5"/><use href="#gem" x="515" y="270" width="22" height="20.24"/><use href="#gem" x="539" y="266" width="26" height="23.92"/><use href="#gem" x="567" y="272" width="20" height="18.4"/><path d="M519 218Q550 262 581 218" fill="none" stroke="#8F6B0E" stroke-width="2.6" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="550" cy="246" r="5" fill="#8F6B0E"/><path d="M610 332V216A45 45 0 0 1 700 216V332Z" fill="url(#g-warm)" stroke="rgba(201,162,39,.9)" stroke-width="2.4"/><path d="M610 296H700" stroke="rgba(90,60,10,.45)" stroke-width="2"/><path d="M610 252H700" stroke="rgba(90,60,10,.3)" stroke-width="1.5"/><use href="#gem" x="620" y="270" width="22" height="20.24"/><use href="#gem" x="644" y="266" width="26" height="23.92"/><use href="#gem" x="672" y="272" width="20" height="18.4"/><path d="M624 218Q655 262 686 218" fill="none" stroke="#8F6B0E" stroke-width="2.6" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="655" cy="246" r="5" fill="#8F6B0E"/><path d="M322 368V198A78 78 0 0 1 478 198V368Z" fill="#1B1917" stroke="rgba(201,162,39,.9)" stroke-width="3"/><path d="M332 368V198A68 68 0 0 1 468 198V368Z" fill="url(#g-warm)"/><path d="M400 130V368" stroke="rgba(90,60,10,.55)" stroke-width="2.4"/><path d="M332 250H468" stroke="rgba(90,60,10,.25)" stroke-width="1.5"/><circle cx="390" cy="302" r="4" fill="#8F6B0E"/><circle cx="410" cy="302" r="4" fill="#8F6B0E"/><g fill="rgba(70,40,5,.5)"><path d="M366 368V300Q366 282 376 282Q386 282 386 300V368Z"/><path d="M430 368V296Q430 276 441 276Q452 276 452 296V368Z"/></g><rect y="368" width="800" height="32" fill="#161514"/><rect x="300" y="368" width="200" height="32" fill="url(#g-reflect)"/><rect x="316" y="368" width="168" height="3" fill="rgba(60,50,40,.9)"/><rect x="310" y="374" width="180" height="3" fill="rgba(60,50,40,.9)"/><rect x="304" y="380" width="192" height="3" fill="rgba(60,50,40,.9)"/><rect x="298" y="386" width="204" height="3" fill="rgba(60,50,40,.9)"/><rect x="292" y="392" width="216" height="3" fill="rgba(60,50,40,.9)"/></symbol>
+<symbol id="scene-lounge" viewBox="0 0 800 400"><rect width="800" height="400" fill="url(#g-wall)"/><rect y="300" width="800" height="100" fill="url(#g-floor)"/><rect y="298" width="800" height="3" fill="rgba(120,95,40,.35)"/><path d="M110 270V130A60 60 0 0 1 230 130V270Z" fill="url(#g-niche)" stroke="rgba(201,162,39,.75)" stroke-width="2.4"/><path d="M110 232H230" stroke="rgba(120,90,30,.4)" stroke-width="2"/><use href="#gem" x="130" y="204" width="26" height="23.92"/><use href="#gem" x="184" y="206" width="24" height="22.08"/><path d="M146 140Q170 190 194 140" fill="none" stroke="#9A7615" stroke-width="3" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="170" cy="176" r="5.5" fill="#9A7615"/><path d="M340 270V130A60 60 0 0 1 460 130V270Z" fill="url(#g-niche)" stroke="rgba(201,162,39,.75)" stroke-width="2.4"/><path d="M340 232H460" stroke="rgba(120,90,30,.4)" stroke-width="2"/><use href="#gem" x="360" y="204" width="26" height="23.92"/><use href="#gem" x="414" y="206" width="24" height="22.08"/><path d="M376 140Q400 190 424 140" fill="none" stroke="#9A7615" stroke-width="3" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="400" cy="176" r="5.5" fill="#9A7615"/><path d="M570 270V130A60 60 0 0 1 690 130V270Z" fill="url(#g-niche)" stroke="rgba(201,162,39,.75)" stroke-width="2.4"/><path d="M570 232H690" stroke="rgba(120,90,30,.4)" stroke-width="2"/><use href="#gem" x="590" y="204" width="26" height="23.92"/><use href="#gem" x="644" y="206" width="24" height="22.08"/><path d="M606 140Q630 190 654 140" fill="none" stroke="#9A7615" stroke-width="3" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="630" cy="176" r="5.5" fill="#9A7615"/><ellipse cx="400" cy="354" rx="290" ry="26" fill="rgba(160,125,40,.35)"/><ellipse cx="400" cy="354" rx="250" ry="20" fill="none" stroke="rgba(201,162,39,.6)" stroke-width="1.5"/><rect x="96" y="262" width="270" height="62" rx="14" fill="#2B2824"/><rect x="84" y="276" width="34" height="62" rx="14" fill="#35302A"/><rect x="344" y="276" width="34" height="62" rx="14" fill="#35302A"/><rect x="118" y="270" width="106" height="40" rx="10" fill="#403A32"/><rect x="238" y="270" width="106" height="40" rx="10" fill="#403A32"/><rect x="100" y="336" width="8" height="12" fill="#C9A227"/><rect x="354" y="336" width="8" height="12" fill="#C9A227"/><rect x="150" y="286" width="46" height="30" rx="7" fill="#C9A227" opacity=".9"/><ellipse cx="560" cy="306" rx="74" ry="17" fill="#FAF9F6" stroke="rgba(0,0,0,.18)"/><rect x="556" y="306" width="8" height="40" fill="#8F6B0E"/><ellipse cx="560" cy="348" rx="34" ry="7" fill="#8F6B0E"/><ellipse cx="540" cy="300" rx="14" ry="4.5" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".8"/><path d="M527 292H553V300A13 5 0 0 1 527 300Z" fill="#fff" stroke="rgba(0,0,0,.25)" stroke-width=".8"/><path d="M553 294Q560 294 560 299Q560 303 553 302" fill="none" stroke="rgba(0,0,0,.3)"/><path d="M574 304Q592 296 606 304" fill="none" stroke="#8F6B0E" stroke-width="2.6" stroke-dasharray="4 2" stroke-linecap="round"/><use href="#gem" x="584" y="292" width="16" height="14.72"/><path d="M130 106L50 300H350L270 106Z" fill="url(#g-cone)"/><path d="M200 0V80" stroke="#8F6B0E" stroke-width="2"/><path d="M170 104A30 24 0 0 1 230 104Z" fill="url(#g-gold-u)"/><ellipse cx="200" cy="105" rx="24" ry="4" fill="#FFF3C8"/><path d="M350 78L270 300H570L490 78Z" fill="url(#g-cone)"/><path d="M420 0V52" stroke="#8F6B0E" stroke-width="2"/><path d="M390 76A30 24 0 0 1 450 76Z" fill="url(#g-gold-u)"/><ellipse cx="420" cy="77" rx="24" ry="4" fill="#FFF3C8"/><path d="M570 106L490 300H790L710 106Z" fill="url(#g-cone)"/><path d="M640 0V80" stroke="#8F6B0E" stroke-width="2"/><path d="M610 104A30 24 0 0 1 670 104Z" fill="url(#g-gold-u)"/><ellipse cx="640" cy="105" rx="24" ry="4" fill="#FFF3C8"/></symbol>
+<symbol id="scene-counter" viewBox="0 0 800 400"><rect width="800" height="400" fill="url(#g-night)"/><path d="M52 240V108A60 60 0 0 1 172 108V240Z" fill="url(#g-niche-dark)" stroke="rgba(201,162,39,.7)" stroke-width="2"/><path d="M42 0L90 120H134L182 0Z" fill="url(#g-cone)" opacity=".7"/><path d="M82 128Q112 190 142 128" fill="none" stroke="url(#g-gold-u)" stroke-width="3.4" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="112" cy="170" r="9" fill="url(#g-gold-u)"/><use href="#gem" x="88" y="192" width="48" height="44.16"/><rect x="60" y="232" width="104" height="4" fill="rgba(201,162,39,.5)"/><path d="M196 240V108A60 60 0 0 1 316 108V240Z" fill="url(#g-niche-dark)" stroke="rgba(201,162,39,.7)" stroke-width="2"/><path d="M186 0L234 120H278L326 0Z" fill="url(#g-cone)" opacity=".7"/><path d="M226 128Q256 190 286 128" fill="none" stroke="url(#g-gold-u)" stroke-width="3.4" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="256" cy="176" r="7" fill="url(#g-gold-u)"/><use href="#gem" x="232" y="192" width="48" height="44.16"/><rect x="204" y="232" width="104" height="4" fill="rgba(201,162,39,.5)"/><path d="M340 240V108A60 60 0 0 1 460 108V240Z" fill="url(#g-niche-dark)" stroke="rgba(201,162,39,.7)" stroke-width="2"/><path d="M330 0L378 120H422L470 0Z" fill="url(#g-cone)" opacity=".7"/><path d="M370 128Q400 190 430 128" fill="none" stroke="url(#g-gold-u)" stroke-width="3.4" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="400" cy="170" r="9" fill="url(#g-gold-u)"/><use href="#gem" x="376" y="192" width="48" height="44.16"/><rect x="348" y="232" width="104" height="4" fill="rgba(201,162,39,.5)"/><path d="M484 240V108A60 60 0 0 1 604 108V240Z" fill="url(#g-niche-dark)" stroke="rgba(201,162,39,.7)" stroke-width="2"/><path d="M474 0L522 120H566L614 0Z" fill="url(#g-cone)" opacity=".7"/><path d="M514 128Q544 190 574 128" fill="none" stroke="url(#g-gold-u)" stroke-width="3.4" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="544" cy="176" r="7" fill="url(#g-gold-u)"/><use href="#gem" x="520" y="192" width="48" height="44.16"/><rect x="492" y="232" width="104" height="4" fill="rgba(201,162,39,.5)"/><path d="M628 240V108A60 60 0 0 1 748 108V240Z" fill="url(#g-niche-dark)" stroke="rgba(201,162,39,.7)" stroke-width="2"/><path d="M618 0L666 120H710L758 0Z" fill="url(#g-cone)" opacity=".7"/><path d="M658 128Q688 190 718 128" fill="none" stroke="url(#g-gold-u)" stroke-width="3.4" stroke-dasharray="5 2.4" stroke-linecap="round"/><circle cx="688" cy="170" r="9" fill="url(#g-gold-u)"/><use href="#gem" x="664" y="192" width="48" height="44.16"/><rect x="636" y="232" width="104" height="4" fill="rgba(201,162,39,.5)"/><rect x="30" y="268" width="740" height="30" fill="url(#g-glass)" stroke="rgba(255,255,255,.35)"/><rect x="30" y="298" width="740" height="102" fill="#2F2A25"/><rect x="30" y="298" width="740" height="4" fill="url(#g-gold-u)"/><rect x="66" y="316" width="82" height="60" rx="3" fill="none" stroke="rgba(201,162,39,.35)"/><rect x="186" y="316" width="82" height="60" rx="3" fill="none" stroke="rgba(201,162,39,.35)"/><rect x="306" y="316" width="82" height="60" rx="3" fill="none" stroke="rgba(201,162,39,.35)"/><rect x="426" y="316" width="82" height="60" rx="3" fill="none" stroke="rgba(201,162,39,.35)"/><rect x="546" y="316" width="82" height="60" rx="3" fill="none" stroke="rgba(201,162,39,.35)"/><rect x="666" y="316" width="82" height="60" rx="3" fill="none" stroke="rgba(201,162,39,.35)"/><use href="#gem" x="66" y="272" width="26" height="23.92"/><use href="#gem" x="156" y="272" width="26" height="23.92"/><use href="#gem" x="246" y="272" width="26" height="23.92"/><use href="#gem" x="336" y="272" width="26" height="23.92"/><use href="#gem" x="426" y="272" width="26" height="23.92"/><use href="#gem" x="516" y="272" width="26" height="23.92"/><use href="#gem" x="606" y="272" width="26" height="23.92"/><use href="#gem" x="696" y="272" width="26" height="23.92"/><circle cx="100" cy="283" r="9" fill="none" stroke="url(#g-gold-u)" stroke-width="4"/><circle cx="290" cy="283" r="9" fill="none" stroke="url(#g-gold-u)" stroke-width="4"/><circle cx="480" cy="283" r="9" fill="none" stroke="url(#g-gold-u)" stroke-width="4"/><circle cx="670" cy="283" r="9" fill="none" stroke="url(#g-gold-u)" stroke-width="4"/><path d="M110 268L170 298L110 298Z M420 268L520 298L440 298Z" fill="rgba(255,255,255,.1)"/></symbol>
+</svg>
+<!-- UI icon sprite -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+ <symbol id="i-certificate" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M9.8 9l1.6 1.6 2.8-3.2M8.5 13.5L7 21l5-2.5 5 2.5-1.5-7.5"/></symbol>
+ <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4.5"/></symbol>
+ <symbol id="i-design" viewBox="0 0 24 24"><path d="M4 20l1.2-4.2L16.5 4.5a2.1 2.1 0 0 1 3 3L8.2 18.8z"/><path d="M14.5 6.5l3 3"/></symbol>
+ <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z"/><path d="M2 14a3 3 0 0 0 6 0M16 14a3 3 0 0 0 6 0"/></symbol>
+ <symbol id="i-hammer" viewBox="0 0 24 24"><path d="M15 3l6 6-2.5 2.5-6-6z"/><path d="M12.5 8.5L4 17a1.8 1.8 0 0 0 3 3l8.5-8.5"/></symbol>
+ <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h3v5H5a1 1 0 0 1-1-1zM20 14h-3v5h2a1 1 0 0 0 1-1z"/><path d="M19 19a4 4 0 0 1-4 3h-2"/></symbol>
+ <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L11 20a2.1 2.1 0 0 1-3-3l8.7-8.7"/><path d="M13.5 3.5a4 4 0 0 0-1.2 5"/></symbol>
+ <symbol id="i-exchange" viewBox="0 0 24 24"><path d="M4 8h14l-3-3M20 16H6l3 3"/></symbol>
+ <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3c.6 4.2 1.8 5.4 6 6-4.2.6-5.4 1.8-6 6-.6-4.2-1.8-5.4-6-6 4.2-.6 5.4-1.8 6-6z"/><path d="M19 14c.3 2 .9 2.7 3 3-2.1.3-2.7 1-3 3-.3-2-.9-2.7-3-3 2.1-.3 2.7-1 3-3z"/></symbol>
+ <symbol id="i-bride" viewBox="0 0 24 24"><circle cx="12" cy="15" r="5.5"/><path d="M9 6l1.5-2.5h3L15 6l-3 3z"/></symbol>
+ <symbol id="i-inspect" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M8 10.5h5M10.5 8v5"/></symbol>
+ <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+ <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1z"/></symbol>
+ <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+ <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+ <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" fill="currentColor" stroke="none"/></symbol>
+ <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></symbol>
+ <symbol id="i-prev" viewBox="0 0 24 24"><path d="M14.5 5.5L8 12l6.5 6.5"/></symbol>
+ <symbol id="i-next" viewBox="0 0 24 24"><path d="M9.5 5.5L16 12l-6.5 6.5"/></symbol>
+ <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8.5 5v14M15.5 5v14" stroke-width="2.2"/></symbol>
+ <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" fill="currentColor" stroke="none"/></symbol>
+ <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+ <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+ <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".7" fill="currentColor"/></symbol>
+ <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8.5h2.5V5H14a3.5 3.5 0 0 0-3.5 3.5V11H8v3.5h2.5V21H14v-6.5h2.4l.6-3.5H14V9.2c0-.4.3-.7.7-.7z"/></symbol>
+ <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="3.5"/><path d="M10.5 9.5v5l4.3-2.5z" fill="currentColor"/></symbol>
+ <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- Loading animation -->
+<div class="loader" id="loader" role="status" aria-live="polite">
+ <svg class="loader__gem" viewBox="0 0 100 92" aria-hidden="true">
+   <path class="fill" d="M24 6H76L98 32L50 90L2 32Z"/>
+   <path pathLength="1" d="M24 6H76L98 32L50 90L2 32Z"/>
+   <path class="facets" pathLength="1" d="M2 32H98M30 32L24 6M50 32L24 6M50 32L76 6M70 32L76 6M30 32L50 90M70 32L50 90M50 32V90"/>
+ </svg>
+ <span class="loader__name">Suvarna</span>
+ <span class="visually-hidden">Loading the showroom</span>
+</div>
+
+<!-- Sticky navigation -->
+<header class="site-header" id="header">
+ <div class="container header__bar">
+   <a class="brand" href="#top" aria-label="Suvarna Heritage Jewellers, back to top">
+     <svg class="brand__mark" viewBox="0 0 100 92" aria-hidden="true"><use href="#gem" width="100" height="92"/></svg>
+     <span class="brand__text"><span class="brand__name">Suvarna</span><span class="brand__sub">Heritage Jewellers</span></span>
+   </a>
+   <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+   <nav class="nav" id="nav" aria-label="Primary">
+     <ul class="nav__list">
+       <li><a class="nav__link" href="#collections" data-nav="collections">Collections</a></li>
+       <li><a class="nav__link" href="#about" data-nav="about">About</a></li>
+       <li><a class="nav__link" href="#arrivals" data-nav="arrivals">New arrivals</a></li>
+       <li><a class="nav__link" href="#bridal" data-nav="bridal">Bridal</a></li>
+       <li><a class="nav__link" href="#services" data-nav="services">Services</a></li>
+       <li><a class="nav__link" href="#gallery" data-nav="gallery">Gallery</a></li>
+       <li><a class="nav__link" href="#visit" data-nav="visit">Visit us</a></li>
+       <li><a class="nav__link" href="#contact" data-nav="contact">Contact</a></li>
+     </ul>
+     <a class="btn btn--ghost-light btn--sm nav__cta" href="#visit">Visit showroom</a>
+   </nav>
+ </div>
+</header>
+
+<main id="main">
+
+ <!-- 1. HERO -->
+ <section class="hero" id="top" aria-labelledby="hero-title" data-nav="top">
+   <div class="container hero__inner">
+     <div class="hero__copy">
+       <h1 class="hero__title" id="hero-title">
+         <span class="line"><span style="--d:.1s">Crafted for Generations,</span></span>
+         <span class="line"><span style="--d:.28s">Designed for Every Celebration</span></span>
+       </h1>
+       <p class="hero__lead hero-in" style="--d:.7s">A family jeweller for three generations. Hallmarked gold, certified diamonds and custom design, made with the patience of the craft and explained with complete honesty.</p>
+       <div class="hero__cta hero-in" style="--d:.85s">
+         <a class="btn btn--gold" href="#collections">Explore collections</a>
+         <a class="btn btn--ghost-light" href="#visit">Visit showroom</a>
+       </div>
+       <p class="status glass hero__status hero-in" style="--d:1s" data-status>
+         <span class="status__dot" aria-hidden="true"></span>
+         <span data-status-text>Open daily at our Zaveri Bazaar showroom</span>
+       </p>
+     </div>
+
+     <div class="hero-art hero-in" style="--d:.35s" data-tilt>
+       <div class="hero-art__frame">
+         <div class="hero-art__light" aria-hidden="true"></div>
+         <svg class="hero-ring" viewBox="0 0 600 700" role="img" aria-label="Illustration of a gold solitaire ring set with a brilliant-cut diamond">
+           <defs>
+             <linearGradient id="hg-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="240" y2="320" spreadMethod="reflect"><stop offset="0" stop-color="#F7E9AD"/><stop offset=".3" stop-color="#D4B13F"/><stop offset=".58" stop-color="#9A7414"/><stop offset=".8" stop-color="#DDBE55"/><stop offset="1" stop-color="#F4E4A0"/></linearGradient>
+             <linearGradient id="hg-sweep" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="150" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/><animateTransform attributeName="gradientTransform" type="translate" values="-340 0;780 0;780 0" keyTimes="0;.4;1" dur="9s" begin="1.6s" repeatCount="indefinite"/></linearGradient>
+             <mask id="hg-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="600" height="700"><circle cx="300" cy="452" r="168" fill="none" stroke="#fff" stroke-width="34"/><use href="#gem" x="195" y="93" width="210" height="193"/></mask>
+           </defs>
+           <ellipse cx="300" cy="652" rx="210" ry="24" fill="url(#g-shadow)"/>
+           <circle cx="300" cy="400" r="262" fill="none" stroke="rgba(201,162,39,.16)"/>
+           <circle cx="300" cy="400" r="318" fill="none" stroke="rgba(201,162,39,.08)"/>
+           <circle cx="300" cy="452" r="168" fill="none" stroke="url(#hg-gold)" stroke-width="34"/>
+           <circle cx="300" cy="452" r="153" fill="none" stroke="rgba(0,0,0,.32)" stroke-width="4"/>
+           <circle cx="300" cy="452" r="183" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3" stroke-linecap="round" stroke-dasharray="230 1150" stroke-dashoffset="-575"/>
+           <circle cx="265.07" cy="287.67" r="6.26" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="334.93" cy="287.67" r="6.26" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="234.36" cy="297.36" r="5.96" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="365.64" cy="297.36" r="5.96" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="206.06" cy="312.72" r="5.65" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="393.94" cy="312.72" r="5.65" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="181.21" cy="333.21" r="5.34" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="418.79" cy="333.21" r="5.34" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="160.72" cy="358.06" r="5.03" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="439.28" cy="358.06" r="5.03" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="145.36" cy="386.36" r="4.72" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="454.64" cy="386.36" r="4.72" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="135.67" cy="417.07" r="4.42" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/><circle cx="464.33" cy="417.07" r="4.42" fill="url(#g-stone)" stroke="rgba(0,0,0,.3)" stroke-width="1"/>
+           <use href="#gem" x="195" y="93" width="210" height="193"/>
+           <g fill="none" stroke="url(#hg-gold)" stroke-width="12" stroke-linecap="round"><path d="M258 282C248 244 228 204 210 160"/><path d="M342 282C352 244 372 204 390 160"/></g>
+           <circle cx="209" cy="158" r="8" fill="url(#hg-gold)" stroke="rgba(0,0,0,.3)"/><circle cx="391" cy="158" r="8" fill="url(#hg-gold)" stroke="rgba(0,0,0,.3)"/>
+           <g mask="url(#hg-mask)"><g transform="skewX(-20)"><rect x="-300" y="0" width="1300" height="700" fill="url(#hg-sweep)"/></g></g>
+           <g style="--spark:#FFF4CF">
+             <use class="spark" href="#spark" x="196" y="86" width="52" height="52" style="--d:0s"/>
+             <use class="spark" href="#spark" x="396" y="74" width="30" height="30" style="--d:1.8s"/>
+             <use class="spark" href="#spark" x="470" y="310" width="22" height="22" style="--d:3.1s"/>
+             <use class="spark" href="#spark" x="110" y="392" width="20" height="20" style="--d:4.2s"/>
+           </g>
+         </svg>
+       </div>
+       <p class="hero-art__tag glass">Hallmarked gold and certified diamonds, with a certificate for every piece.</p>
+     </div>
+   </div>
+ </section>
+
+ <!-- 2. FEATURED COLLECTIONS -->
+ <section class="section section--ivory" id="collections" aria-labelledby="collections-title">
+   <div class="container">
+     <header class="section-head" data-reveal>
+       <h2 id="collections-title">Six collections, one family standard</h2>
+       <p>Choose a collection to see the latest pieces, then visit us to try them on and talk to the people who made them.</p>
+     </header>
+     <div class="collections">
+       <article class="collection is-hoverable">
+         <div class="collection__media art arch tone-charcoal" data-reveal="unveil" style="--d:0s" data-collection="gold">
+           <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a gold coin necklace on a display bust"><use href="#neck-coin" width="400" height="500"/></svg>
+         </div>
+         <div class="collection__body" data-reveal style="--d:0.25s">
+           <h3>Gold Jewellery</h3>
+           <p>22-karat necklaces, bangles and chains, hallmarked and finished by hand.</p>
+           <button class="link-btn" type="button" data-collection="gold">View collection<span class="visually-hidden">: Gold Jewellery</span></button>
+         </div>
+       </article>
+       <article class="collection is-hoverable">
+         <div class="collection__media art arch tone-cream" data-reveal="unveil" style="--d:0.12s" data-collection="diamond">
+           <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a gold solitaire diamond ring"><use href="#ring-solitaire" width="400" height="500"/></svg>
+         </div>
+         <div class="collection__body" data-reveal style="--d:0.37s">
+           <h3>Diamond Jewellery</h3>
+           <p>Certified solitaires, pavé bands and everyday pieces that catch the light.</p>
+           <button class="link-btn" type="button" data-collection="diamond">View collection<span class="visually-hidden">: Diamond Jewellery</span></button>
+         </div>
+       </article>
+       <article class="collection is-hoverable">
+         <div class="collection__media art arch tone-sand" data-reveal="unveil" style="--d:0.24s" data-collection="bridal">
+           <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a layered bridal necklace with rubies and pearls"><use href="#neck-bridal" width="400" height="500"/></svg>
+         </div>
+         <div class="collection__body" data-reveal style="--d:0.49s">
+           <h3>Bridal Collection</h3>
+           <p>Complete wedding sets planned around your outfit, your family’s traditions and your date.</p>
+           <button class="link-btn" type="button" data-collection="bridal">View collection<span class="visually-hidden">: Bridal Collection</span></button>
+         </div>
+       </article>
+       <article class="collection is-hoverable">
+         <div class="collection__media art arch tone-umber" data-reveal="unveil" style="--d:0s" data-collection="temple">
+           <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a long temple haram with gold coin discs"><use href="#neck-haram" width="400" height="500"/></svg>
+         </div>
+         <div class="collection__body" data-reveal style="--d:0.25s">
+           <h3>Temple Jewellery</h3>
+           <p>Antique-finish gold inspired by temple sculpture, with Lakshmi coins and lotus motifs.</p>
+           <button class="link-btn" type="button" data-collection="temple">View collection<span class="visually-hidden">: Temple Jewellery</span></button>
+         </div>
+       </article>
+       <article class="collection is-hoverable">
+         <div class="collection__media art arch tone-beige metal-silver" data-reveal="unveil" style="--d:0.12s" data-collection="silver">
+           <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a stack of silver bangles"><use href="#bangles" width="400" height="500"/></svg>
+         </div>
+         <div class="collection__body" data-reveal style="--d:0.37s">
+           <h3>Silver Collection</h3>
+           <p>Pure 925 silver for gifting, festivals and everyday wear.</p>
+           <button class="link-btn" type="button" data-collection="silver">View collection<span class="visually-hidden">: Silver Collection</span></button>
+         </div>
+       </article>
+       <article class="collection is-hoverable">
+         <div class="collection__media art arch tone-slate metal-plat" data-reveal="unveil" style="--d:0.24s" data-collection="platinum">
+           <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a platinum diamond pendant on a display bust"><use href="#neck-pendant" width="400" height="500"/></svg>
+         </div>
+         <div class="collection__body" data-reveal style="--d:0.49s">
+           <h3>Platinum Collection</h3>
+           <p>Understated, enduring pieces in 95% pure platinum.</p>
+           <button class="link-btn" type="button" data-collection="platinum">View collection<span class="visually-hidden">: Platinum Collection</span></button>
+         </div>
+       </article>
+     </div>
+   </div>
+ </section>
+
+ <!-- 3. ABOUT US -->
+ <section class="section section--cream" id="about" aria-labelledby="about-title">
+   <div class="container about">
+     <div class="about__media" data-reveal>
+       <div class="art arch tone-beige about__seal" data-reveal="unveil">
+         <svg viewBox="0 0 400 400" role="img" aria-label="Seal reading Suvarna Heritage Jewellers, certified purity, since 1974">
+           <defs><path id="seal-top" d="M62 200a138 138 0 0 1 276 0"/><path id="seal-bot" d="M44 200a156 156 0 0 0 312 0"/></defs>
+           <circle cx="200" cy="200" r="190" fill="none" stroke="#8A6A0E" stroke-width="1.6"/>
+           <circle cx="200" cy="200" r="181" fill="none" stroke="#C9A227" stroke-width=".8"/>
+           <circle cx="200" cy="200" r="112" fill="none" stroke="#8A6A0E" stroke-width="1.2"/>
+           <text font-family="'Bodoni Moda',Didot,Georgia,serif" font-size="25" letter-spacing="6" fill="#1E1E1E"><textPath href="#seal-top" startOffset="50%" text-anchor="middle">SUVARNA HERITAGE</textPath></text>
+           <text font-family="'Jost','Segoe UI',sans-serif" font-size="17" letter-spacing="9" fill="#5B564C"><textPath href="#seal-bot" startOffset="50%" text-anchor="middle">CERTIFIED PURITY</textPath></text>
+           <g style="--spark:#B8901C"><use href="#spark" x="22" y="190" width="20" height="20"/><use href="#spark" x="358" y="190" width="20" height="20"/></g>
+           <use href="#gem" x="156" y="128" width="88" height="81"/>
+           <text x="200" y="236" text-anchor="middle" font-family="'Jost','Segoe UI',sans-serif" font-size="14" letter-spacing="4" fill="#5B564C">Since</text>
+           <text x="200" y="278" text-anchor="middle" font-family="'Bodoni Moda',Didot,Georgia,serif" font-size="40" fill="#1E1E1E">1974</text>
+         </svg>
+       </div>
+       <p class="about__note glass">Hallmarked gold, certified diamonds</p>
+     </div>
+     <div class="about__text" data-stagger>
+       <h2 id="about-title">Five decades of trust, one family’s craft</h2>
+       <p class="lead">In 1974 our founder opened a single workbench in Zaveri Bazaar with one rule: tell the customer the truth about the gold. We have never changed it.</p>
+       <p>Today three generations work side by side. The elders still judge colour and weight by eye and hand, while our designers use modern tools to draw, cast and finish pieces with a precision that was not possible when we began. Customers who bought their wedding jewellery from us now bring their own children.</p>
+       <ul class="assurance" aria-label="Our assurance">
+         <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Hallmarked gold.</strong> Every gold piece carries the BIS hallmark, and purity is tested in front of you.</span></li>
+         <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Certified diamonds.</strong> Stones come with an independent grading report that you can verify.</span></li>
+         <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Lifetime care.</strong> Cleaning, checks and honest exchange value for every piece you buy from us.</span></li>
+       </ul>
+       <ol class="timeline" aria-label="Our journey">
+         <li><strong>1974</strong><span>One workbench and a promise of honest weight and purity.</span></li>
+         <li><strong>1991</strong><span>The first showroom opens, and the family begins offering custom design.</span></li>
+         <li><strong>2008</strong><span>The second generation adds a diamond studio and a bridal design team.</span></li>
+         <li><strong>Today</strong><span>Three generations, one standard, and a showroom that feels like visiting family.</span></li>
+       </ol>
+     </div>
+   </div>
+ </section>
+
+ <!-- 4. WHY CHOOSE US -->
+ <section class="section section--dark" id="why" aria-labelledby="why-title" data-nav="about">
+   <div class="container">
+     <header class="section-head" data-reveal>
+       <h2 id="why-title">Why families return to us</h2>
+       <p>Six commitments that guide every sale, every repair and every conversation across the counter.</p>
+     </header>
+     <div class="why" data-stagger>
+       <article class="why__item"><svg class="icon" aria-hidden="true"><use href="#i-certificate"/></svg><h3>Certified jewellery</h3><p>BIS hallmarking on gold and independent grading reports on diamonds, issued with every purchase.</p></article>
+       <article class="why__item"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><h3>Trusted quality</h3><p>Purity is checked in front of you, to standards that have not changed since 1974.</p></article>
+       <article class="why__item"><svg class="icon" aria-hidden="true"><use href="#i-design"/></svg><h3>Custom design services</h3><p>Bring a sketch, a photograph or an old piece. Our designers will shape it into something new.</p></article>
+       <article class="why__item"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg><h3>Transparent pricing</h3><p>Gold rate, making charges and stone values are itemised and explained before you decide.</p></article>
+       <article class="why__item"><svg class="icon" aria-hidden="true"><use href="#i-hammer"/></svg><h3>Modern craftsmanship</h3><p>Traditional hand finishing, supported by digital design and precision tools.</p></article>
+       <article class="why__item"><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg><h3>Dedicated customer support</h3><p>One point of contact from your first visit through every after-sales request.</p></article>
+     </div>
+   </div>
+ </section>
+
+ <!-- 5. NEW ARRIVALS -->
+ <section class="section section--ivory" id="arrivals" aria-labelledby="arrivals-title">
+   <div class="container">
+     <header class="section-head" data-reveal>
+       <h2 id="arrivals-title">New arrivals in the showroom</h2>
+       <p>A look at what has just reached our cases. Pieces are shown without prices so you can ask for today’s rate in person.</p>
+     </header>
+     <div class="filters" role="group" aria-label="Filter new arrivals by collection" data-reveal>
+       <button class="filter" type="button" data-filter="all" aria-pressed="true">All pieces</button>
+       <button class="filter" type="button" data-filter="gold" aria-pressed="false">Gold</button>
+       <button class="filter" type="button" data-filter="diamond" aria-pressed="false">Diamond</button>
+       <button class="filter" type="button" data-filter="bridal" aria-pressed="false">Bridal</button>
+       <button class="filter" type="button" data-filter="temple" aria-pressed="false">Temple</button>
+       <button class="filter" type="button" data-filter="silver" aria-pressed="false">Silver</button>
+       <button class="filter" type="button" data-filter="platinum" aria-pressed="false">Platinum</button>
+     </div>
+     <p class="filters-status" id="filters-status" role="status" aria-live="polite">Showing all 12 pieces</p>
+     <div class="pieces" id="pieces" data-reveal>
+       <figure class="piece is-hoverable" data-category="gold">
+         <div class="art tone-charcoal"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Gold coin necklace on a display bust"><use href="#neck-coin" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Lotus coin necklace</span><span class="piece__cat">Gold necklace</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="gold">
+         <div class="art tone-umber"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Stack of gold bangles"><use href="#bangles" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Rope-chain bangles</span><span class="piece__cat">Gold bangles</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="diamond">
+         <div class="art tone-cream"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Gold solitaire ring with a brilliant-cut diamond"><use href="#ring-solitaire" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Halo solitaire ring</span><span class="piece__cat">Diamond ring</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="diamond">
+         <div class="art tone-slate metal-plat"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pair of diamond stud earrings"><use href="#earrings-studs" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Brilliant-cut studs</span><span class="piece__cat">Diamond earrings</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="bridal">
+         <div class="art tone-sand"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Layered bridal necklace with rubies and pearls"><use href="#neck-bridal" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Ruby and pearl haar</span><span class="piece__cat">Bridal necklace</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="bridal">
+         <div class="art tone-charcoal"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pair of gold chandelier earrings with rubies"><use href="#earrings-chandelier" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Ruby chandelier earrings</span><span class="piece__cat">Bridal earrings</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="temple">
+         <div class="art tone-umber"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Long gold haram with coin discs and a lotus pendant"><use href="#neck-haram" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Lakshmi coin haram</span><span class="piece__cat">Temple necklace</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="temple">
+         <div class="art tone-charcoal"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pair of gold jhumka earrings with pearl drops"><use href="#earrings-jhumka" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Antique jhumka earrings</span><span class="piece__cat">Temple earrings</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="silver">
+         <div class="art tone-slate metal-silver"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Stack of silver bangles"><use href="#bangles" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Filigree bangles</span><span class="piece__cat">Silver bangles</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="silver">
+         <div class="art tone-beige metal-silver"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Silver pendant set with a stone on a display bust"><use href="#neck-pendant" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Halo pendant</span><span class="piece__cat">Silver pendant</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="platinum">
+         <div class="art tone-slate metal-plat"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Platinum eternity band set with diamonds"><use href="#ring-eternity" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Eternity band</span><span class="piece__cat">Platinum ring</span></figcaption>
+       </figure>
+       <figure class="piece is-hoverable" data-category="platinum">
+         <div class="art tone-charcoal metal-plat"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Platinum solitaire pendant on a display bust"><use href="#neck-pendant" width="400" height="500"/></svg></div>
+         <figcaption><span class="piece__name">Solitaire pendant</span><span class="piece__cat">Platinum pendant</span></figcaption>
+       </figure>
+     </div>
+   </div>
+ </section>
+
+ <!-- 6. BRIDAL HIGHLIGHT -->
+ <section class="section section--beige" id="bridal" aria-labelledby="bridal-title">
+   <div class="container bridal">
+     <div class="bridal__art is-hoverable">
+       <div class="art arch tone-sand" data-reveal="unveil">
+         <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a layered bridal necklace with rubies and pearls on a display bust"><use href="#neck-bridal" width="400" height="500"/></svg>
+       </div>
+     </div>
+     <div class="bridal__copy" data-stagger>
+       <h2 id="bridal-title">Bridal jewellery, planned around your wedding day</h2>
+       <p class="lead">Your wedding set should feel like it was made for you, because it will be. Come in with your family, your outfit and your date, and we will design from there.</p>
+       <ul class="bridal__list">
+         <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>A private consultation suite for the bride and her family, with tea and unhurried time.</span></li>
+         <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Pieces matched to your outfit, from silk swatches to lehenga sketches.</span></li>
+         <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Custom sets with a confirmed delivery date, finished well before the wedding.</span></li>
+       </ul>
+       <div class="bridal__cta">
+         <button class="btn btn--dark" type="button" data-prefill="I would like to book a bridal consultation.">Book consultation</button>
+         <a class="link-btn" href="#arrivals" data-collection="bridal">See bridal pieces</a>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <!-- 7. SERVICES -->
+ <section class="section section--cream" id="services" aria-labelledby="services-title">
+   <div class="container services">
+     <div class="services__intro" data-reveal>
+       <h2 id="services-title">Care for your jewellery long after the purchase</h2>
+       <p>From a new design to a loose clasp, our workshop is on site, so most work is done by people you can meet.</p>
+       <a class="btn btn--dark" href="#contact">Talk to our team</a>
+     </div>
+     <div class="services__grid" data-stagger>
+       <article class="service">
+         <svg class="icon" aria-hidden="true"><use href="#i-design"/></svg>
+         <h3>Custom jewellery design</h3>
+         <p>From first sketch to finished piece, with design previews and fittings along the way.</p>
+         <button class="link-btn" type="button" data-prefill="I would like to enquire about custom jewellery design.">Enquire<span class="visually-hidden"> about custom jewellery design</span></button>
+       </article>
+       <article class="service">
+         <svg class="icon" aria-hidden="true"><use href="#i-wrench"/></svg>
+         <h3>Jewellery repair</h3>
+         <p>Resizing, clasp and chain repair, stone resetting and polishing, done in our own workshop.</p>
+         <button class="link-btn" type="button" data-prefill="I would like to enquire about jewellery repair.">Enquire<span class="visually-hidden"> about jewellery repair</span></button>
+       </article>
+       <article class="service">
+         <svg class="icon" aria-hidden="true"><use href="#i-exchange"/></svg>
+         <h3>Gold exchange</h3>
+         <p>Exchange old gold at the day’s rate, tested and weighed openly in front of you.</p>
+         <button class="link-btn" type="button" data-prefill="I would like to enquire about gold exchange.">Enquire<span class="visually-hidden"> about gold exchange</span></button>
+       </article>
+       <article class="service">
+         <svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg>
+         <h3>Jewellery cleaning</h3>
+         <p>Gentle ultrasonic cleaning and polish that restores shine without removing metal.</p>
+         <button class="link-btn" type="button" data-prefill="I would like to enquire about jewellery cleaning.">Enquire<span class="visually-hidden"> about jewellery cleaning</span></button>
+       </article>
+       <article class="service">
+         <svg class="icon" aria-hidden="true"><use href="#i-bride"/></svg>
+         <h3>Bridal consultation</h3>
+         <p>Private appointments for the bride and family with a dedicated design advisor.</p>
+         <button class="link-btn" type="button" data-prefill="I would like to enquire about a bridal consultation.">Enquire<span class="visually-hidden"> about bridal consultation</span></button>
+       </article>
+       <article class="service">
+         <svg class="icon" aria-hidden="true"><use href="#i-inspect"/></svg>
+         <h3>Jewellery maintenance</h3>
+         <p>Regular checks for loose stones, worn prongs and weakening clasps.</p>
+         <button class="link-btn" type="button" data-prefill="I would like to enquire about jewellery maintenance.">Enquire<span class="visually-hidden"> about jewellery maintenance</span></button>
+       </article>
+     </div>
+   </div>
+ </section>
+
+ <!-- 8. CUSTOMER TESTIMONIALS -->
+ <section class="section section--dark" id="reviews" aria-labelledby="reviews-title" data-nav="services">
+   <div class="container">
+     <header class="section-head" data-reveal>
+       <h2 id="reviews-title">Words from the families we serve</h2>
+       <p>Many of our customers have been with us for decades. Here is what a few of them say.</p>
+     </header>
+     <!-- NOTE: these are sample reviews. Replace with real, permissioned customer feedback before launch. -->
+     <div class="reviews" data-carousel data-reveal role="region" aria-roledescription="carousel" aria-label="Customer testimonials">
+       <div class="carousel__viewport">
+         <div class="carousel__track" aria-live="off">
+           <figure class="review" role="group" aria-roledescription="slide" aria-label="1 of 5">
+             <div class="stars" role="img" aria-label="Rated 5 out of 5"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+             <blockquote><p>We planned my daughter’s wedding set over three visits. Nobody rushed us, and every piece was weighed and explained in front of us.</p></blockquote>
+             <figcaption class="review__who"><strong>Meenakshi Rao</strong><span>Bridal set</span></figcaption>
+           </figure>
+           <figure class="review" role="group" aria-roledescription="slide" aria-label="2 of 5">
+             <div class="stars" role="img" aria-label="Rated 5 out of 5"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+             <blockquote><p>They reset my grandmother’s stones into a pendant I wear every week. The finish is flawless and the final bill matched the quote exactly.</p></blockquote>
+             <figcaption class="review__who"><strong>Kavita Nair</strong><span>Custom redesign</span></figcaption>
+           </figure>
+           <figure class="review" role="group" aria-roledescription="slide" aria-label="3 of 5">
+             <div class="stars" role="img" aria-label="Rated 5 out of 5"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+             <blockquote><p>Honest advice on diamond grading, and a certificate for every stone. We came for one ring and have returned for every anniversary since.</p></blockquote>
+             <figcaption class="review__who"><strong>Arjun and Neha Shah</strong><span>Diamond solitaire</span></figcaption>
+           </figure>
+           <figure class="review" role="group" aria-roledescription="slide" aria-label="4 of 5">
+             <div class="stars" role="img" aria-label="Rated 5 out of 5"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+             <blockquote><p>The gold exchange was transparent from start to finish. Purity was tested while we watched and the rate was shown on the screen.</p></blockquote>
+             <figcaption class="review__who"><strong>Rahul Deshmukh</strong><span>Gold exchange</span></figcaption>
+           </figure>
+           <figure class="review" role="group" aria-roledescription="slide" aria-label="5 of 5">
+             <div class="stars" role="img" aria-label="Rated 5 out of 5"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></div>
+             <blockquote><p>Temple jewellery with real character. The antique finish and the weight of the pieces felt unlike anything else we saw in the market.</p></blockquote>
+             <figcaption class="review__who"><strong>Lakshmi Iyer</strong><span>Temple haram</span></figcaption>
+           </figure>
+         </div>
+       </div>
+       <div class="carousel__controls">
+         <div class="carousel__dots" data-dots></div>
+         <div class="carousel__buttons">
+           <button class="round-btn" type="button" data-toggle aria-pressed="false" aria-label="Pause automatic sliding">
+             <svg class="icon icon-pause" aria-hidden="true"><use href="#i-pause"/></svg>
+             <svg class="icon icon-play" aria-hidden="true"><use href="#i-play"/></svg>
+           </button>
+           <button class="round-btn" type="button" data-prev aria-label="Previous reviews"><svg class="icon" aria-hidden="true"><use href="#i-prev"/></svg></button>
+           <button class="round-btn" type="button" data-next aria-label="Next reviews"><svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
+ <!-- 9. SHOWROOM GALLERY -->
+ <section class="section section--ivory" id="gallery" aria-labelledby="gallery-title">
+   <div class="container">
+     <header class="section-head" data-reveal>
+       <h2 id="gallery-title">Inside the showroom</h2>
+       <p>Warm light, quiet rooms and cases arranged so that every piece can be seen properly. Select any image to view it larger.</p>
+     </header>
+     <div class="gallery" id="gallery-grid" data-reveal>
+       <button class="gallery__item is-wide" type="button" data-ratio="2" data-title="Our showroom entrance" data-sub="Zaveri Bazaar, Mumbai" aria-label="Open image: Our showroom entrance">
+         <span class="art art--wide tone-charcoal"><svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of the showroom entrance with arched windows and a glowing door"><use href="#scene-entrance" width="800" height="400"/></svg></span>
+         <span class="gallery__zoom glass" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+         <span class="gallery__cap"><strong>Our showroom entrance</strong><span>Zaveri Bazaar, Mumbai</span></span>
+       </button>
+       <button class="gallery__item is-tall" type="button" data-ratio="0.8" data-title="Bridal haar in the showcase" data-sub="Jewellery showcase" aria-label="Open image: Bridal haar in the showcase">
+         <span class="art tone-sand"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a bridal necklace on a display bust"><use href="#neck-bridal" width="400" height="500"/></svg></span>
+         <span class="gallery__zoom glass" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+         <span class="gallery__cap"><strong>Bridal haar in the showcase</strong><span>Jewellery showcase</span></span>
+       </button>
+       <button class="gallery__item" type="button" data-ratio="0.8" data-title="Diamond solitaire" data-sub="Jewellery showcase" aria-label="Open image: Diamond solitaire">
+         <span class="art tone-cream"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a diamond solitaire ring"><use href="#ring-solitaire" width="400" height="500"/></svg></span>
+         <span class="gallery__zoom glass" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+         <span class="gallery__cap"><strong>Diamond solitaire</strong><span>Jewellery showcase</span></span>
+       </button>
+       <button class="gallery__item" type="button" data-ratio="0.8" data-title="Chandelier earrings" data-sub="Jewellery showcase" aria-label="Open image: Chandelier earrings">
+         <span class="art tone-charcoal"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of gold chandelier earrings"><use href="#earrings-chandelier" width="400" height="500"/></svg></span>
+         <span class="gallery__zoom glass" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+         <span class="gallery__cap"><strong>Chandelier earrings</strong><span>Jewellery showcase</span></span>
+       </button>
+       <button class="gallery__item" type="button" data-ratio="0.8" data-title="Diamond pendant" data-sub="Jewellery showcase" aria-label="Open image: Diamond pendant">
+         <span class="art tone-slate metal-plat"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a diamond pendant on a display bust"><use href="#neck-pendant" width="400" height="500"/></svg></span>
+         <span class="gallery__zoom glass" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+         <span class="gallery__cap"><strong>Diamond pendant</strong><span>Jewellery showcase</span></span>
+       </button>
+       <button class="gallery__item" type="button" data-ratio="0.8" data-title="Gold bangle stack" data-sub="Jewellery showcase" aria-label="Open image: Gold bangle stack">
+         <span class="art tone-umber"><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a stack of gold bangles"><use href="#bangles" width="400" height="500"/></svg></span>
+         <span class="gallery__zoom glass" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+         <span class="gallery__cap"><strong>Gold bangle stack</strong><span>Jewellery showcase</span></span>
+       </button>
+       <button class="gallery__item is-wide" type="button" data-ratio="2" data-title="Private consultation lounge" data-sub="Inside the showroom" aria-label="Open image: Private consultation lounge">
+         <span class="art art--wide tone-beige"><svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a lounge with a sofa, a round table and pendant lights"><use href="#scene-lounge" width="800" height="400"/></svg></span>
+         <span class="gallery__zoom glass" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+         <span class="gallery__cap"><strong>Private consultation lounge</strong><span>Inside the showroom</span></span>
+       </button>
+       <button class="gallery__item is-wide" type="button" data-ratio="2" data-title="The diamond counter" data-sub="Inside the showroom" aria-label="Open image: The diamond counter">
+         <span class="art art--wide tone-charcoal"><svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a glass display counter lit by spotlights"><use href="#scene-counter" width="800" height="400"/></svg></span>
+         <span class="gallery__zoom glass" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+         <span class="gallery__cap"><strong>The diamond counter</strong><span>Inside the showroom</span></span>
+       </button>
+     </div>
+   </div>
+ </section>
+
+ <!-- 10. VISIT OUR SHOWROOM -->
+ <section class="section section--cream" id="visit" aria-labelledby="visit-title">
+   <div class="container visit">
+     <div class="visit__info" data-stagger>
+       <h2 id="visit-title">Visit our showroom</h2>
+       <p class="status is-closed" data-status><span class="status__dot" aria-hidden="true"></span><span data-status-text>Open daily, please see hours below</span></p>
+       <ul class="contact-list">
+         <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><span class="label">Store address</span><address>Shop 14, Heritage Arcade, Zaveri Bazaar<br>Mumbai, Maharashtra 400 002</address></div></li>
+         <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><div><span class="label">Phone number</span><a href="tel:+919876543210">+91 98765 43210</a></div></li>
+         <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><div><span class="label">Email address</span><a href="mailto:hello@suvarnaheritage.com">hello@suvarnaheritage.com</a></div></li>
+       </ul>
+       <table class="hours">
+         <caption>Business hours</caption>
+         <tbody>
+           <tr data-day="1"><th scope="row">Monday</th><td>10:30 am to 8:30 pm</td></tr>
+           <tr data-day="2"><th scope="row">Tuesday</th><td>10:30 am to 8:30 pm</td></tr>
+           <tr data-day="3"><th scope="row">Wednesday</th><td>10:30 am to 8:30 pm</td></tr>
+           <tr data-day="4"><th scope="row">Thursday</th><td>10:30 am to 8:30 pm</td></tr>
+           <tr data-day="5"><th scope="row">Friday</th><td>10:30 am to 8:30 pm</td></tr>
+           <tr data-day="6"><th scope="row">Saturday</th><td>10:30 am to 8:30 pm</td></tr>
+           <tr data-day="0"><th scope="row">Sunday</th><td>11:00 am to 7:00 pm</td></tr>
+         </tbody>
+       </table>
+       <div class="visit__actions">
+         <a class="btn btn--dark" href="https://www.google.com/maps/dir/?api=1&destination=Zaveri+Bazaar+Mumbai" target="_blank" rel="noopener">Get directions<span class="visually-hidden"> (opens Google Maps in a new tab)</span></a>
+       </div>
+     </div>
+     <div class="map" data-reveal>
+       <!-- TODO: replace the query below with your exact address or the "Embed a map" URL from Google Maps -->
+       <iframe title="Map showing the Suvarna Heritage Jewellers showroom in Zaveri Bazaar, Mumbai" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Zaveri%20Bazaar%2C%20Mumbai&z=15&output=embed"></iframe>
+     </div>
+   </div>
+ </section>
+
+ <!-- 11. CONTACT -->
+ <section class="section section--ivory" id="contact" aria-labelledby="contact-title">
+   <div class="container contact">
+     <div class="contact__intro" data-stagger>
+       <h2 id="contact-title">Plan your visit or ask us anything</h2>
+       <p>Leave your details and we will call you back during showroom hours. For a quicker reply, message us on WhatsApp.</p>
+       <a class="btn btn--dark" href="https://wa.me/919876543210" target="_blank" rel="noopener" data-whatsapp>Message on WhatsApp<span class="visually-hidden"> (opens in a new tab)</span></a>
+     </div>
+     <form class="form" id="contact-form" novalidate data-reveal>
+       <div class="field">
+         <label for="cf-name">Name</label>
+         <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-err" placeholder="Your full name">
+         <p class="field__error" id="cf-name-err" aria-live="polite"></p>
+       </div>
+       <div class="field">
+         <label for="cf-phone">Phone number</label>
+         <input id="cf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="cf-phone-err" placeholder="+91 98765 43210">
+         <p class="field__error" id="cf-phone-err" aria-live="polite"></p>
+       </div>
+       <div class="field">
+         <label for="cf-message">Message</label>
+         <textarea id="cf-message" name="message" rows="4" required maxlength="600" aria-describedby="cf-message-err" placeholder="Tell us what you are looking for, or when you would like to visit."></textarea>
+         <p class="field__error" id="cf-message-err" aria-live="polite"></p>
+       </div>
+       <div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+       <div class="form__foot">
+         <button class="btn btn--gold" type="submit" id="cf-submit">Send message</button>
+         <p class="form__hint" id="cf-hint">Your message opens in WhatsApp, ready to send, so our team can reply quickly.</p>
+         <p class="form__status" id="cf-status" role="status" tabindex="-1" hidden></p>
+       </div>
+     </form>
+   </div>
+ </section>
+</main>
+
+<!-- 13. FOOTER -->
+<footer class="site-footer">
+ <div class="container">
+   <div class="footer__grid">
+     <div class="footer__brand">
+       <a class="brand" href="#top" aria-label="Suvarna Heritage Jewellers, back to top">
+         <svg class="brand__mark" viewBox="0 0 100 92" aria-hidden="true"><use href="#gem" width="100" height="92"/></svg>
+         <span class="brand__text"><span class="brand__name">Suvarna</span><span class="brand__sub">Heritage Jewellers</span></span>
+       </a>
+       <p>A family jeweller in Zaveri Bazaar since 1974. Hallmarked gold, certified diamonds and honest advice.</p>
+     </div>
+     <nav aria-label="Footer">
+       <h3>Quick links</h3>
+       <ul class="footer__links">
+         <li><a href="#collections">Collections</a></li>
+         <li><a href="#about">About us</a></li>
+         <li><a href="#arrivals">New arrivals</a></li>
+         <li><a href="#bridal">Bridal collection</a></li>
+         <li><a href="#services">Services</a></li>
+         <li><a href="#gallery">Showroom gallery</a></li>
+         <li><a href="#contact">Contact</a></li>
+       </ul>
+     </nav>
+     <div>
+       <h3>Contact</h3>
+       <address>
+         <span>Shop 14, Heritage Arcade, Zaveri Bazaar<br>Mumbai, Maharashtra 400 002</span>
+         <a href="tel:+919876543210">+91 98765 43210</a>
+         <a href="mailto:hello@suvarnaheritage.com">hello@suvarnaheritage.com</a>
+       </address>
+     </div>
+     <div>
+       <h3>Follow us</h3>
+       <!-- TODO: replace # with your real profile URLs -->
+       <ul class="social">
+         <li><a href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+         <li><a href="#" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+         <li><a href="#" aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="#i-youtube"/></svg></a></li>
+         <li><a href="https://wa.me/919876543210" data-whatsapp target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a></li>
+       </ul>
+     </div>
+   </div>
+   <div class="footer__legal">
+     <p>© <span data-year>2026</span> Suvarna Heritage Jewellers. All rights reserved.</p>
+     <p>Gold rates change daily. Please visit or call for today’s rate.</p>
+   </div>
+ </div>
+</footer>
+
+<!-- 12. WHATSAPP FLOATING BUTTON and back to top -->
+<div class="fab-stack">
+ <button class="fab fab--top" id="to-top" type="button" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+ <a class="fab fab--wa" href="https://wa.me/919876543210" target="_blank" rel="noopener" data-whatsapp aria-label="Chat with us on WhatsApp (opens in a new tab)">
+   <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span class="fab__label" aria-hidden="true">Chat with us</span>
+ </a>
+</div>
+
+<!-- Gallery lightbox -->
+<dialog class="lightbox" id="lightbox" aria-label="Showroom gallery viewer">
+ <div class="lightbox__inner" data-lb-inner>
+   <p class="lightbox__count" id="lb-count" aria-live="polite"></p>
+   <button class="round-btn lightbox__close" type="button" data-lb-close aria-label="Close viewer"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+   <button class="round-btn lightbox__nav lightbox__nav--prev" type="button" data-lb-prev aria-label="Previous image"><svg class="icon" aria-hidden="true"><use href="#i-prev"/></svg></button>
+   <div class="lightbox__art art" id="lb-art"></div>
+   <p class="lightbox__cap" id="lb-cap"></p>
+   <button class="round-btn lightbox__nav lightbox__nav--next" type="button" data-lb-next aria-label="Next image"><svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></button>
+ </div>
+</dialog>
+
+<script>
+/* =========================================================
+  SUVARNA HERITAGE JEWELLERS: behaviour
+  Vanilla JS, no dependencies. Each feature is a small function
+  started from init() at the bottom.
+  ========================================================= */
+(() => {
+ 'use strict';
+
+ /* ---------- CONFIG: edit these values for the real business ---------- */
+ const CONFIG = {
+   whatsappNumber: '919876543210',   // country code + number, digits only
+   whatsappGreeting: 'Hello Suvarna Heritage Jewellers, I would like to know more about your collections.',
+   formEndpoint: '',                 // e.g. 'https://formspree.io/f/xxxxxxx'. Leave empty to send through WhatsApp.
+   timeZone: 'Asia/Kolkata',         // showroom time zone, used for the open/closed status
+   hours: {                          // 0 = Sunday ... 6 = Saturday, [opens, closes] in 24-hour time
+     0: ['11:00', '19:00'], 1: ['10:30', '20:30'], 2: ['10:30', '20:30'], 3: ['10:30', '20:30'],
+     4: ['10:30', '20:30'], 5: ['10:30', '20:30'], 6: ['10:30', '20:30']
+   },
+   carouselInterval: 6500            // ms between automatic testimonial slides
+ };
+
+ /* ---------- helpers ---------- */
+ const $ = (sel, ctx = document) => ctx.querySelector(sel);
+ const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+ const root = document.documentElement;
+ const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+ const reduceMotion = () => motionQuery.matches;
+ const scrollBehavior = () => (reduceMotion() ? 'auto' : 'smooth');
+ const whatsappLink = text => `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+ /* ---------- 1. Loading animation ---------- */
+ function initLoader() {
+   const loader = $('#loader');
+   const started = performance.now();
+   const minimum = reduceMotion() ? 200 : 1500;
+   let finished = false;
+
+   const finish = () => {
+     if (finished) return;
+     finished = true;
+     const wait = Math.max(0, minimum - (performance.now() - started));
+     setTimeout(() => {
+       root.classList.add('is-ready');
+       if (loader) loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+       setTimeout(() => loader && loader.remove(), 1500);
+     }, wait);
+   };
+
+   if (document.readyState === 'complete') finish();
+   else window.addEventListener('load', finish, { once: true });
+   setTimeout(finish, 4500); // never trap the visitor behind the loader
+ }
+
+ /* ---------- 2. Header, mobile menu, active link, back to top ---------- */
+ function initHeader() {
+   const header = $('#header');
+   const toggle = $('#menu-toggle');
+   const nav = $('#nav');
+   const toTop = $('#to-top');
+   const desktop = window.matchMedia('(min-width: 1180px)');
+   const links = $$('.nav__link');
+
+   const onScroll = () => {
+     const y = window.scrollY;
+     header.classList.toggle('is-scrolled', y > 40);
+     toTop.classList.toggle('is-visible', y > 700);
+   };
+   window.addEventListener('scroll', onScroll, { passive: true });
+   onScroll();
+
+   const setMenu = open => {
+     nav.classList.toggle('is-open', open);
+     header.classList.toggle('menu-open', open);
+     root.classList.toggle('no-scroll', open);
+     toggle.setAttribute('aria-expanded', String(open));
+     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+     if (open) links[0].focus({ preventScroll: true });
+   };
+   const isOpen = () => nav.classList.contains('is-open');
+
+   toggle.addEventListener('click', () => setMenu(!isOpen()));
+   links.concat($$('.nav__cta')).forEach(a => a.addEventListener('click', () => { if (isOpen()) setMenu(false); }));
+   document.addEventListener('keydown', e => {
+     if (!isOpen()) return;
+     if (e.key === 'Escape') { setMenu(false); toggle.focus(); return; }
+     if (e.key === 'Tab') { // keep focus inside the open menu
+       const stops = [toggle, ...links, $('.nav__cta')];
+       const first = stops[0], last = stops[stops.length - 1];
+       if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+     }
+   });
+   desktop.addEventListener('change', e => { if (e.matches && isOpen()) setMenu(false); });
+
+   toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: scrollBehavior() }));
+
+   // highlight the nav link for the section in the middle of the screen
+   const sections = $$('main > section[id]');
+   if ('IntersectionObserver' in window) {
+     const io = new IntersectionObserver(entries => {
+       entries.forEach(entry => {
+         if (!entry.isIntersecting) return;
+         const key = entry.target.dataset.nav || entry.target.id;
+         links.forEach(a => {
+           const on = a.dataset.nav === key;
+           a.classList.toggle('is-active', on);
+           if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+         });
+       });
+     }, { rootMargin: '-45% 0px -50% 0px' });
+     sections.forEach(s => io.observe(s));
+   }
+ }
+
+ /* ---------- 3. Reveal on scroll ---------- */
+ function initReveal() {
+   $$('[data-stagger]').forEach(group => {
+     Array.from(group.children).forEach((child, i) => {
+       if (!child.hasAttribute('data-reveal')) child.setAttribute('data-reveal', '');
+       child.style.setProperty('--d', `${Math.min(i, 6) * 0.09}s`);
+     });
+   });
+   const items = $$('[data-reveal]');
+   if (!('IntersectionObserver' in window) || reduceMotion()) {
+     items.forEach(el => el.classList.add('is-visible'));
+     return;
+   }
+   const io = new IntersectionObserver(entries => {
+     entries.forEach(entry => {
+       if (!entry.isIntersecting) return;
+       entry.target.classList.add('is-visible');
+       io.unobserve(entry.target);
+     });
+   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+   items.forEach(el => io.observe(el));
+ }
+
+ /* ---------- 4. Hero: pointer light, tilt, paused sparkle when motion is reduced ---------- */
+ function initHero() {
+   const hero = $('.hero');
+   const art = $('[data-tilt]');
+   const ring = $('.hero-ring');
+   if (!hero || !art) return;
+   if (reduceMotion()) { if (ring && ring.pauseAnimations) ring.pauseAnimations(); return; }
+   if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+   let frame = 0;
+   const clamp = v => Math.min(100, Math.max(0, v));
+   hero.addEventListener('pointermove', e => {
+     cancelAnimationFrame(frame);
+     frame = requestAnimationFrame(() => {
+       const box = art.getBoundingClientRect();
+       const x = (e.clientX - box.left) / box.width;
+       const y = (e.clientY - box.top) / box.height;
+       art.style.setProperty('--lx', `${clamp(x * 100)}%`);
+       art.style.setProperty('--ly', `${clamp(y * 100)}%`);
+       art.style.setProperty('--ry', `${((x - 0.5) * 10).toFixed(2)}deg`);
+       art.style.setProperty('--rx', `${((0.5 - y) * 8).toFixed(2)}deg`);
+     });
+   });
+   hero.addEventListener('pointerleave', () => {
+     ['--lx', '--ly', '--rx', '--ry'].forEach(p => art.style.removeProperty(p));
+   });
+ }
+
+ /* ---------- 5. Open / closed status and today's hours ---------- */
+ function initStatus() {
+   const badges = $$('[data-status]');
+   const rows = $$('.hours tr[data-day]');
+   const toMinutes = t => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+   const format = t => {
+     const [h, m] = t.split(':').map(Number);
+     return `${h % 12 || 12}${m ? ':' + String(m).padStart(2, '0') : ''} ${h >= 12 ? 'pm' : 'am'}`;
+   };
+   const showroomNow = () => {
+     const parts = new Intl.DateTimeFormat('en-GB', { timeZone: CONFIG.timeZone, weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+     const get = type => parts.find(p => p.type === type).value;
+     const days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+     return { day: days[get('weekday')], minutes: (Number(get('hour')) % 24) * 60 + Number(get('minute')) };
+   };
+
+   function update() {
+     let now;
+     try { now = showroomNow(); } catch (err) { return; }
+     const [opens, closes] = CONFIG.hours[now.day];
+     let open = false, text;
+     if (now.minutes >= toMinutes(opens) && now.minutes < toMinutes(closes)) {
+       open = true; text = `Open now until ${format(closes)}`;
+     } else if (now.minutes < toMinutes(opens)) {
+       text = `Closed now, opens today at ${format(opens)}`;
+     } else {
+       text = `Closed now, opens tomorrow at ${format(CONFIG.hours[(now.day + 1) % 7][0])}`;
+     }
+     badges.forEach(b => {
+       b.classList.toggle('is-open', open);
+       b.classList.toggle('is-closed', !open);
+       const label = $('[data-status-text]', b);
+       if (label) label.textContent = text;
+     });
+     rows.forEach(row => {
+       const today = Number(row.dataset.day) === now.day;
+       row.classList.toggle('is-today', today);
+       if (today) row.setAttribute('aria-current', 'date'); else row.removeAttribute('aria-current');
+     });
+   }
+   update();
+   setInterval(update, 60000);
+ }
+
+ /* ---------- 6. New arrivals filter (also driven by the collection cards) ---------- */
+ function initArrivals() {
+   const buttons = $$('.filter');
+   const pieces = $$('.piece');
+   const status = $('#filters-status');
+   const labels = { gold: 'gold', diamond: 'diamond', bridal: 'bridal', temple: 'temple', silver: 'silver', platinum: 'platinum' };
+   if (!buttons.length) return;
+
+   function applyFilter(category) {
+     buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === category)));
+     let shown = 0;
+     pieces.forEach(piece => {
+       const match = category === 'all' || piece.dataset.category === category;
+       if (match) {
+         shown++;
+         if (piece.hidden) {
+           piece.hidden = false;
+           requestAnimationFrame(() => requestAnimationFrame(() => piece.classList.remove('is-out')));
+         } else {
+           piece.classList.remove('is-out');
+         }
+       } else {
+         piece.classList.add('is-out');
+         setTimeout(() => { if (piece.classList.contains('is-out')) piece.hidden = true; }, reduceMotion() ? 0 : 350);
+       }
+     });
+     status.textContent = category === 'all'
+       ? `Showing all ${shown} pieces`
+       : `Showing ${shown} ${labels[category]} ${shown === 1 ? 'piece' : 'pieces'}`;
+   }
+
+   buttons.forEach(b => b.addEventListener('click', () => applyFilter(b.dataset.filter)));
+
+   // "View collection" buttons and cards jump to the filtered arrivals
+   $$('[data-collection]').forEach(el => {
+     el.addEventListener('click', e => {
+       if (el.tagName === 'A') e.preventDefault();
+       applyFilter(el.dataset.collection);
+       $('#arrivals').scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
+     });
+   });
+ }
+
+ /* ---------- 7. Testimonial carousel ---------- */
+ function initCarousel() {
+   const box = $('[data-carousel]');
+   if (!box) return;
+   const viewport = $('.carousel__viewport', box);
+   const track = $('.carousel__track', box);
+   const slides = Array.from(track.children);
+   const dotsWrap = $('[data-dots]', box);
+   const toggle = $('[data-toggle]', box);
+   let index = 0, pages = 1, timer = 0;
+   let playing = !reduceMotion();   // user setting (pause button)
+   let held = false;                // temporarily paused by hover, focus, hidden tab or off-screen
+   let visible = true;
+
+   const perView = () => parseInt(getComputedStyle(box).getPropertyValue('--per-view'), 10) || 1;
+
+   function render(instant) {
+     const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+     const step = slides[0].getBoundingClientRect().width + gap;
+     if (instant) track.style.transition = 'none';
+     track.style.transform = `translateX(${-step * index}px)`;
+     if (instant) { void track.offsetWidth; track.style.transition = ''; }
+     const pv = perView();
+     slides.forEach((s, i) => s.setAttribute('aria-hidden', String(i < index || i >= index + pv)));
+     $$('.carousel__dot', dotsWrap).forEach((d, i) => d.setAttribute('aria-current', String(i === index)));
+   }
+   function goTo(i, instant) { index = (i + pages) % pages; render(instant); }
+
+   function build() {
+     pages = Math.max(1, slides.length - perView() + 1);
+     dotsWrap.replaceChildren(...Array.from({ length: pages }, (_, i) => {
+       const b = document.createElement('button');
+       b.type = 'button'; b.className = 'carousel__dot';
+       b.setAttribute('aria-label', `Go to reviews ${i + 1} of ${pages}`);
+       b.addEventListener('click', () => { goTo(i); restart(); });
+       return b;
+     }));
+     goTo(Math.min(index, pages - 1), true);
+   }
+
+   function stop() { clearInterval(timer); timer = 0; }
+   function start() { stop(); if (playing && !held && visible) timer = setInterval(() => goTo(index + 1), CONFIG.carouselInterval); }
+   function restart() { start(); }
+
+   $('[data-prev]', box).addEventListener('click', () => { goTo(index - 1); restart(); });
+   $('[data-next]', box).addEventListener('click', () => { goTo(index + 1); restart(); });
+   toggle.addEventListener('click', () => {
+     playing = !playing;
+     toggle.setAttribute('aria-pressed', String(!playing));
+     toggle.setAttribute('aria-label', playing ? 'Pause automatic sliding' : 'Start automatic sliding');
+     start();
+   });
+   toggle.setAttribute('aria-pressed', String(!playing));
+   if (!playing) toggle.setAttribute('aria-label', 'Start automatic sliding');
+
+   ['pointerenter', 'focusin'].forEach(ev => box.addEventListener(ev, () => { held = true; stop(); }));
+   ['pointerleave', 'focusout'].forEach(ev => box.addEventListener(ev, () => { held = false; start(); }));
+   document.addEventListener('visibilitychange', () => { held = document.hidden; held ? stop() : start(); });
+   if ('IntersectionObserver' in window) {
+     new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; start(); }, { threshold: 0.2 }).observe(box);
+   }
+
+   // swipe on touch screens
+   let startX = null;
+   viewport.addEventListener('pointerdown', e => { startX = e.clientX; });
+   viewport.addEventListener('pointerup', e => {
+     if (startX === null) return;
+     const dx = e.clientX - startX; startX = null;
+     if (Math.abs(dx) > 50) { goTo(index + (dx < 0 ? 1 : -1)); restart(); }
+   });
+   viewport.addEventListener('pointercancel', () => { startX = null; });
+
+   let resizeTimer;
+   window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(build, 150); });
+   build();
+   start();
+ }
+
+ /* ---------- 8. Gallery lightbox (native <dialog>) ---------- */
+ function initLightbox() {
+   const dialog = $('#lightbox');
+   const items = $$('.gallery__item');
+   if (!dialog || !items.length || typeof dialog.showModal !== 'function') return;
+   const stage = $('#lb-art');
+   const caption = $('#lb-cap');
+   const count = $('#lb-count');
+   let current = 0, opener = null;
+
+   function render() {
+     const item = items[current];
+     const art = $('.art', item);
+     const media = art.firstElementChild.cloneNode(true);
+     const ratio = parseFloat(item.dataset.ratio) || 1;
+     stage.className = 'lightbox__art art ' + Array.from(art.classList).filter(c => /^(tone|metal)-/.test(c)).join(' ');
+     stage.style.setProperty('--r', ratio);
+     stage.replaceChildren(media);
+     caption.innerHTML = '';
+     const title = document.createElement('strong'); title.textContent = item.dataset.title;
+     const sub = document.createElement('span'); sub.textContent = item.dataset.sub;
+     caption.append(title, sub);
+     count.textContent = `${current + 1} of ${items.length}`;
+   }
+   function open(i, trigger) {
+     current = i; opener = trigger; render();
+     if (!dialog.open) { dialog.showModal(); root.classList.add('no-scroll'); }
+   }
+   const step = d => { current = (current + d + items.length) % items.length; render(); };
+
+   items.forEach((item, i) => item.addEventListener('click', () => open(i, item)));
+   $('[data-lb-prev]', dialog).addEventListener('click', () => step(-1));
+   $('[data-lb-next]', dialog).addEventListener('click', () => step(1));
+   $('[data-lb-close]', dialog).addEventListener('click', () => dialog.close());
+   dialog.addEventListener('close', () => { root.classList.remove('no-scroll'); if (opener) opener.focus({ preventScroll: true }); });
+   dialog.addEventListener('keydown', e => {
+     if (e.key === 'ArrowRight') step(1);
+     if (e.key === 'ArrowLeft') step(-1);
+   });
+   // click on the dim area (not on the picture or buttons) closes the viewer
+   $('[data-lb-inner]', dialog).addEventListener('click', e => {
+     if (e.target === e.currentTarget) dialog.close();
+   });
+   let startX = null;
+   stage.addEventListener('pointerdown', e => { startX = e.clientX; });
+   stage.addEventListener('pointerup', e => {
+     if (startX === null) return;
+     const dx = e.clientX - startX; startX = null;
+     if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+   });
+ }
+
+ /* ---------- 9. Contact form: validation and sending ---------- */
+ function initForm() {
+   const form = $('#contact-form');
+   if (!form) return;
+   const status = $('#cf-status');
+   const hint = $('#cf-hint');
+   const submit = $('#cf-submit');
+   const fields = ['name', 'phone', 'message'].map(key => ({
+     key,
+     input: form.elements[key],
+     error: $(`#cf-${key}-err`)
+   }));
+
+   const rules = {
+     name: v => {
+       const t = v.trim();
+       if (t.length < 2) return 'Please enter your name.';
+       if (!/^[\p{L}][\p{L} .'’-]*$/u.test(t)) return 'Please use letters only in your name.';
+       return '';
+     },
+     phone: v => (/^\+?\d{10,13}$/.test(v.replace(/[\s()-]/g, '')) ? '' : 'Enter a phone number with 10 to 13 digits, for example +91 98765 43210.'),
+     message: v => {
+       const t = v.trim();
+       if (t.length < 10) return 'Please write at least 10 characters so we can help properly.';
+       return t.length > 600 ? 'Please keep your message under 600 characters.' : '';
+     }
+   };
+
+   const check = f => {
+     const msg = rules[f.key](f.input.value);
+     f.error.textContent = msg;
+     if (msg) f.input.setAttribute('aria-invalid', 'true'); else f.input.removeAttribute('aria-invalid');
+     return !msg;
+   };
+   fields.forEach(f => {
+     f.input.addEventListener('blur', () => { if (f.input.value || f.input.hasAttribute('aria-invalid')) check(f); });
+     f.input.addEventListener('input', () => { if (f.input.hasAttribute('aria-invalid')) check(f); });
+   });
+
+   if (CONFIG.formEndpoint) hint.textContent = 'We will call you back during showroom hours.';
+
+   const show = (text, isError) => {
+     status.hidden = false;
+     status.textContent = text;
+     status.classList.toggle('is-error', Boolean(isError));
+     status.focus({ preventScroll: false });
+   };
+
+   form.addEventListener('submit', async e => {
+     e.preventDefault();
+     status.hidden = true;
+     const results = fields.map(check);
+     if (results.includes(false)) { fields[results.indexOf(false)].input.focus(); return; }
+     if (form.elements.company.value) return; // honeypot: bots fill this field
+
+     const name = form.elements.name.value.trim();
+     const phone = form.elements.phone.value.trim();
+     const message = form.elements.message.value.trim();
+
+     if (CONFIG.formEndpoint) {
+       submit.disabled = true; submit.textContent = 'Sending...';
+       try {
+         const res = await fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify({ name, phone, message }) });
+         if (!res.ok) throw new Error(String(res.status));
+         form.reset();
+         show(`Thank you, ${name}. We have received your message and will call you back soon.`, false);
+       } catch (err) {
+         show('Your message could not be sent. Please try again, or call us on +91 98765 43210.', true);
+       } finally {
+         submit.disabled = false; submit.textContent = 'Send message';
+       }
+       return;
+     }
+
+     const text = `Hello Suvarna Heritage Jewellers,\n${message}\n\nName: ${name}\nPhone: ${phone}`;
+     window.open(whatsappLink(text), '_blank', 'noopener');
+     form.reset();
+     show(`Thank you, ${name}. Your message is ready in WhatsApp. Press send there and we will reply shortly.`, false);
+   });
+ }
+
+ /* ---------- 10. Buttons that pre-fill the contact message ---------- */
+ function initPrefill() {
+   const message = $('#cf-message');
+   $$('[data-prefill]').forEach(btn => btn.addEventListener('click', () => {
+     if (message && !message.value.trim()) message.value = btn.dataset.prefill;
+     $('#contact').scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
+     setTimeout(() => $('#cf-name').focus({ preventScroll: true }), reduceMotion() ? 0 : 700);
+   }));
+ }
+
+ /* ---------- 11. Small extras ---------- */
+ function initExtras() {
+   $$('[data-whatsapp]').forEach(a => { a.href = whatsappLink(CONFIG.whatsappGreeting); });
+   $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+ }
+
+ /* ---------- start ---------- */
+ function init() {
+   root.classList.remove('no-js');
+   initLoader();
+   initHeader();
+   initReveal();
+   initHero();
+   initStatus();
+   initArrivals();
+   initCarousel();
+   initLightbox();
+   initForm();
+   initPrefill();
+   initExtras();
+ }
+ if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})();
+
+</script>
+</body>
+</html>
+ 
